@@ -48,7 +48,7 @@ build_pages:
     - date
     - set -x
     - apt-get update
-    - "$APT_GET_INSTALL" nodejs
+    - $APT_GET_INSTALL nodejs
     - (cd "site" && gem install bundler)
     - (cd "site" && bundler install)
     - (cd "site" && jekyll build)
