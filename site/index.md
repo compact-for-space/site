@@ -1,3 +1,6 @@
+---
+layout: home
+---
 # COMPACT
 
 The future complex plasma facility

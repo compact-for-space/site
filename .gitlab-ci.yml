@@ -36,6 +36,7 @@ pre-commit:
 
 build_pages:
   stage: build
+  pages: true
   variables:
     DEBIAN_FRONTEND: noninteractive
     JEKYLL_ENV: production
@@ -51,11 +52,10 @@ build_pages:
     - $APT_GET_INSTALL nodejs
     - (cd "site" && gem install bundler)
     - (cd "site" && bundler install)
-    - (cd "site" && jekyll build)
+    - (cd "site" && jekyll build -d ../public)
     - ruby -v
     - gem -v
     - jekyll -v
-    - mv "site/_site" public
     - find public/
   artifacts:
     paths:

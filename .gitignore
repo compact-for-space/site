@@ -1,1 +1,4 @@
 *~
+public/
+site/Gemfile.lock
+site/_site/
