@@ -1,3 +1,10 @@
+---
+home: https://gitlab.com/compact-for-space/site/
+stable link: https://gitlab.com/projects/81882967
+mirror: https://github.com/compact-for-space/site/
+doi: tbd
+---
+
 # compact-for-space
 
 This repository contains the source code and build instructions for
