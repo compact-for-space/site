@@ -1,0 +1,9 @@
+# _data/publications.yml
+- title: "COMPACT — a new complex plasma facility for the ISS"
+  authors: "Knapek, C. A. and Couedel, L. and Dove, A. and Goree, J. and Konopka, U. and Melzer, A. and Ratynskaia, S. and Thoma, M. H. and Thomas, H. M."
+  year: 2022
+  doi: 10.1088/1361-6587/ac9ff0
+- title: "Optical system for COMPACT"
+  authors: "Mohr, D. P., Hamkalo, M., Schütt, S., Knapek, C. A., Maier, D., & Melzer, A."
+  year: 2026
+  doi: 10.5281/zenodo.19206132

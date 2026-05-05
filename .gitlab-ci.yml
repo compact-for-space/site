@@ -45,8 +45,8 @@ build_pages:
     # https://hub.docker.com/_/ruby
     name: ruby:latest
     entrypoint: [""]
+  extends: .display_env
   script:
-    - date
     - set -x
     - apt-get update
     - $APT_GET_INSTALL nodejs
