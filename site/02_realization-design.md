@@ -15,8 +15,8 @@ The design of COMPACT ensures the feasibility of the scientific research questio
 * Particle imaging of a thin particle slice (2D imaging system)
 * Particle imaging in a subvolume of the dust cloud (3D imaging system)
 * Plasma glow imaging
-* Laser particle manipulation
-* UV particle manipulation
+* Laser particle manipulation system
+* UV particle manipulation system
 
 
 # Zyflex plasma chamber
@@ -30,6 +30,8 @@ The design of COMPACT ensures the feasibility of the scientific research questio
 # Particle imaging in a subvolume of the dust cloud (3D imaging system)
 
 # Plasma glow imaging
+
+The plasma glow imaging system will capture the glow emission from the argon plasma. The most intense argon (double) spectral lines are near 750 nm, 763 nm, 810 nm and 840 nm. 
 
 # Laser particle manipulation
 
