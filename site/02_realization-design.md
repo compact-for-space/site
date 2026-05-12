@@ -18,16 +18,51 @@ The design of COMPACT ensures the feasibility of the scientific research questio
 * Laser particle manipulation system
 * UV particle manipulation system
 
+<a id="sec:zyflex"></a>
 
 # Zyflex plasma chamber
 
-# 4-channel RF generator
+The Zyflex plasma chamber ("cylindrical and flexible") has an inner volume of 220 mm diameter and 80 mm height. Optical access to the chmaber is through four large side windows (140 mm x 100 mm). The working gas, typically argon, is led into the chamber via a flow controller. Typical operating pressure is between 0.1 Pa and 100 Pa which is controlled by a turbo pump and butterfly contrrol valve. Gas inflow and outflow are through the top and bottom lids of the chamber.
+
+The plasma chamber is equipped with two pairs of electrodes in a parallel-plate geometry. Each electrode pair consists of an inner disk electrode of 80 mm diameter and and an outer ring electrode of 83 mm inner diameter and 114 mm outer diameter. The two electrode pairs can be moved individually up and down ensuring a maximum electrode separation of 80 mm and a minimum of 30 mm. Hence, the plasma and dust cloud volume can be drastically changed during plasma operation. The four electrodes are powered individually by a 4-channel [RF generator](#sec:4channel).
+
+Further, the side walls can host up to 12 ports. One port will be used for gas pressure monitoring, two others for the [UV lamp](#sec:uv) and its beam stop. The remaining 9 ports will house the [particle dispensers](#sec:dispenser).
+
+
+<a id="sec:4channel"></a>
+
+# 4-channel RF generator and arbitrary function generator
+
+COMPACT is equipped with a 4-channel RF generator. This generator provides a sinusoidal RF voltage at a frequency of 13.56 MHz for each of the four electrodes (upper and lower disk electrode and upper and lower ring electrode). The amplitude and relative phase of the RF voltage can be chosen individually for each of the four electrodes. The maximum output power per channel is 4 W. 
+
+In addition, all channels can be switched on and off individually with a minimum duty cycle of 10 µs. 
+
+The RF signals are coupled to the electrodes via a pi-type matching network. It is also planned that low-frequency modulations of the electrode self-bias voltages will be possible. There, arbitrary voltage waveforms with amplitudes up to 100 V at frequencies up to 100 Hz can be applied through the matching network to each of the electrodes.
+
+Mean values of the applied RF voltages as well as short sequences of highly-resolved voltage waveforms will be recorded and stored.
+
+The RF and arbitrary function generators will provide a versatile tool to manipulate the plasma properties and hence the dust cloud properties. Experiments on parabolic flights indicate that extended, homogeneous and void-free dust clouds can be produced under suitable operating conditions.
+
+
+
+<a id="sec:dispenser"></a>
 
 # Multiple particle dispensers
 
+The particle dispensers are electromagnetic shakers. The top of the dispensor carries a small housing that contains the dust. The container is covered by a sieve that is selected according to the dust size to ensure that on the one hand sufficient amounts of dust are released into the plasma and on the other hand that particle agglomerates are suppressed.
+
+Nine dispersers with different particle sizes and geometries are foreseen.
+
+<a id="sec:2D"></a>
+
 # Particle imaging of a thin particle slice (2D imaging system)
 
+<a id="sec:3d"></a>
+
 # Particle imaging in a subvolume of the dust cloud (3D imaging system)
+
+
+<a id="sec:glow"></a>
 
 # Plasma glow imaging
 
@@ -36,5 +71,10 @@ The plasma glow imaging system will capture the glow emission from the argon pla
 
 # Laser particle manipulation
 
+A manpulation laser (2W at 808 nm) will be guided through one of the side windows of the Zyflex chamber. The beam diameter is about 1 mm. The beem is positioned and moved through the dust cloud via a steering mirror system. The radation pressure of the laser beam will transfer a momentum onto the dust particles hit by the beam and therefore excites particle motion in the direction of the beam. 
+
+<a id="sec:uv"></a>
+
 # UV particle manipulation
 
+UV illumination of the dust is envisaged for the manipulation of the dust charge by photoelectron emission induced by the UV radiation. For that purpose, a small-scale UV lamp with a peak wavelength of 160 nm will provide a few watts of UV radiation. It is planned to install the lamp in one of the dispensor ports of the plasma chamber.
