@@ -48,17 +48,18 @@ build_pages:
     - chromium --version
     - (cd "site" && bundle exec jekyll serve --host 0.0.0.0 --quiet --detach; sleep 6)
     - mkdir -p pdfs
-    - FILES=(
-    "00_index:index"
-    "01_science:science-mission"
-    "02_design:realization-design"
-    "03_activities:breadboard"
-    "04_docu:documentation-specification"
-    "05_posts:posts"
-    "06_publications:publications"
-    "07_funding:funding"
-    "08_about:about"
-    )
+    - |
+      FILES=(
+      "00_index:index"
+      "01_science:science-mission"
+      "02_design:realization-design"
+      "03_activities:breadboard"
+      "04_docu:documentation-specification"
+      "05_posts:posts"
+      "06_publications:publications"
+      "07_funding:funding"
+      "08_about:about"
+      )
     - echo "127.0.0.1 site-2ef4a3.gitlab.io" >> /etc/hosts
     - set -x
     - |
@@ -80,14 +81,14 @@ build_pages:
       fi
       done
     - img2pdf --output pdfs/00_cover.pdf -S Letter pdfs/00_index.png
-    - pdfunite pdfs/*.pdf "$BASE_NAME".pdf
+    - pdfunite pdfs/*.pdf "$BASE_NAME.pdf"
     - rm -r pdfs
     - pkill -f "jekyll serve"
     - find public/
   artifacts:
     paths:
       - public/
-      - "$BASE_NAME".pdf
+      - "$BASE_NAME.pdf"
 
 prepare_release_step1:
   stage: build
@@ -124,7 +125,7 @@ release_job:
     - apt-get update
     - $APT_GET_INSTALL curl
     - |
-        curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "$BASE_NAME".pdf "$PACKAGE_REGISTRY_URL/$BASE_NAME-$TAG".pdf
+        curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "$BASE_NAME.pdf" "$PACKAGE_REGISTRY_URL/$BASE_NAME-$TAG".pdf
     - cat /etc/os-release
   release:
     name: 'v$TAG'
@@ -133,9 +134,9 @@ release_job:
     ref: '$CI_COMMIT_SHA'
     assets:
       links:
-        - name: "$BASE_NAME-$TAG".pdf
-          filepath: /"$BASE_NAME".pdf
-          url: "$PACKAGE_REGISTRY_URL/$BASE_NAME-$TAG".pdf
+        - name: "$BASE_NAME-$TAG.pdf"
+          filepath: "/$BASE_NAME.pdf"
+          url: "$PACKAGE_REGISTRY_URL/$BASE_NAME-$TAG.pdf"
           link_type: other
 
 pages:
