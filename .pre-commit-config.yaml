@@ -20,9 +20,19 @@ repos:
   - repo: https://gitlab.com/yaml2script/yaml2script
     rev: 0.2.1
     hooks:
-      - id: yaml2script-all
+      - id: yaml2script-check
+        name: yaml2script check for sh
         additional_dependencies:
           - shellcheck-py
+        args: ['.gitlab-ci.yml', 'variables', '.display_env', 'pre-commit', 'prepare_release_step1', 'pages']
+  - repo: https://gitlab.com/yaml2script/yaml2script
+    rev: 0.2.1
+    hooks:
+      - id: yaml2script-check
+        name: yaml2script check for bash
+        additional_dependencies:
+          - shellcheck-py
+        args: [-shebang=#!/usr/bin/env bash, '.gitlab-ci.yml', 'build_pages', 'release_job']
 #  - repo: https://github.com/igorshubovych/markdownlint-cli
 #    rev: v0.48.0
 #    hooks:

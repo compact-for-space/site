@@ -33,6 +33,7 @@ build_pages:
     APT_GET_INSTALL: "apt-get install --no-install-recommends -q -y"
   image:
     # https://hub.docker.com/_/ruby
+    # based on debian
     name: ruby:latest
     entrypoint: [""]
   extends: .display_env
@@ -58,8 +59,7 @@ build_pages:
       "05_posts:posts"
       "06_publications:publications"
       "07_funding:funding"
-      "08_about:about"
-      )
+      "08_about:about")
     - echo "127.0.0.1 site-2ef4a3.gitlab.io" >> /etc/hosts
     - set -x
     - |
@@ -75,9 +75,9 @@ build_pages:
       url="http://localhost:4000/${path}"
       url="http://site-2ef4a3.gitlab.io:4000/${path}"
       fi
-      chromium --no-sandbox --headless --disable-gpu --page=A4 --print-to-pdf=/app/compact-for-space-site/pdfs/${idx}.pdf "$url"
+      chromium --no-sandbox --headless --disable-gpu --page=A4 --print-to-pdf=/app/compact-for-space-site/pdfs/"${idx}".pdf "$url"
       if [ "$path" = "index" ]; then
-      chromium --no-sandbox --headless --disable-gpu --screenshot=/app/compact-for-space-site/pdfs/${idx}.png --window-size=1024,768 "$url"
+      chromium --no-sandbox --headless --disable-gpu --screenshot=/app/compact-for-space-site/pdfs/"${idx}".png --window-size=1024,768 "$url"
       fi
       done
     - img2pdf --output pdfs/00_cover.pdf -S Letter pdfs/00_index.png
@@ -105,7 +105,7 @@ prepare_release_step1:
     - TAG="$(jq -r .metadata.version metadata.json)"
     - DESCRIPTION="$(jq -r .metadata.description metadata.json)"
     - DEPLOY2ZENODO_UPLOAD="v$TAG.zip"
-    - git archive --format zip --output "$DEPLOY2ZENODO_UPLOAD" '$CI_COMMIT_SHA'
+    - git archive --format zip --output "$DEPLOY2ZENODO_UPLOAD" "$CI_COMMIT_SHA"
     - echo "DESCRIPTION=$DESCRIPTION" > variables.env
     - echo "TAG=$TAG" >> variables.env
     - echo "DEPLOY2ZENODO_UPLOAD=$DEPLOY2ZENODO_UPLOAD" >> variables.env
