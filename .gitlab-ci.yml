@@ -75,9 +75,9 @@ build_pages:
       url="http://localhost:4000/${path}"
       url="http://site-2ef4a3.gitlab.io:4000/${path}"
       fi
-      chromium --no-sandbox --headless --disable-gpu --page=A4 --print-to-pdf=/app/compact-for-space-site/pdfs/"${idx}".pdf "$url"
+      chromium --no-sandbox --headless --disable-gpu --page=A4 --print-to-pdf="$(pwd)"/pdfs/"${idx}".pdf "$url"
       if [ "$path" = "index" ]; then
-      chromium --no-sandbox --headless --disable-gpu --screenshot=/app/compact-for-space-site/pdfs/"${idx}".png --window-size=1024,768 "$url"
+      chromium --no-sandbox --headless --disable-gpu --screenshot="$(pwd)"/pdfs/"${idx}".png --window-size=1024,768 "$url"
       fi
       done
     - img2pdf --output pdfs/00_cover.pdf -S Letter pdfs/00_index.png
