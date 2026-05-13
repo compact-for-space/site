@@ -5,6 +5,7 @@
 variables:
   DEBIAN_FRONTEND: noninteractive
   APT_GET_INSTALL: "apt-get install --no-install-recommends -q -y"
+  BASE_NAME: "COMPACT_in_space"
 
 .display_env:
   before_script:
@@ -36,19 +37,106 @@ build_pages:
     entrypoint: [""]
   extends: .display_env
   script:
-    - set -x
     - apt-get update
-    - $APT_GET_INSTALL nodejs
     - (cd "site" && gem install bundler)
     - (cd "site" && bundler install)
-    - (cd "site" && jekyll build -d ../public)
     - ruby -v
     - gem -v
     - jekyll -v
+    - (cd "site" && jekyll build -d ../public)
+    - $APT_GET_INSTALL chromium img2pdf poppler-utils
+    - chromium --version
+    - (cd "site" && bundle exec jekyll serve --host 0.0.0.0 --quiet --detach; sleep 6)
+    - mkdir -p pdfs
+    - FILES=(
+    "00_index:index"
+    "01_science:science-mission"
+    "02_design:realization-design"
+    "03_activities:breadboard"
+    "04_docu:documentation-specification"
+    "05_posts:posts"
+    "06_publications:publications"
+    "07_funding:funding"
+    "08_about:about"
+    )
+    - echo "127.0.0.1 site-2ef4a3.gitlab.io" >> /etc/hosts
+    - set -x
+    - |
+      for item in "${FILES[@]}"; do
+      idx=${item%%:*}
+      path=${item##*:}
+      echo "idx: $idx"
+      echo "path: $path"
+      if [ "$path" = "index" ]; then
+      url="http://localhost:4000/"
+      url="http://site-2ef4a3.gitlab.io:4000/"
+      else
+      url="http://localhost:4000/${path}"
+      url="http://site-2ef4a3.gitlab.io:4000/${path}"
+      fi
+      chromium --no-sandbox --headless --disable-gpu --page=A4 --print-to-pdf=/app/compact-for-space-site/pdfs/${idx}.pdf "$url"
+      if [ "$path" = "index" ]; then
+      chromium --no-sandbox --headless --disable-gpu --screenshot=/app/compact-for-space-site/pdfs/${idx}.png --window-size=1024,768 "$url"
+      fi
+      done
+    - img2pdf --output pdfs/00_cover.pdf -S Letter pdfs/00_index.png
+    - pdfunite pdfs/*.pdf "$BASE_NAME".pdf
+    - rm -r pdfs
+    - pkill -f "jekyll serve"
     - find public/
   artifacts:
     paths:
       - public/
+      - "$BASE_NAME".pdf
+
+prepare_release_step1:
+  stage: build
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: $CI_PIPELINE_SOURCE != "pipeline"
+    - if: $CI_PIPELINE_SOURCE == "pipeline"
+  image:
+    name: alpine:latest
+  extends: .display_env
+  script:
+    - apk add --no-cache cffconvert git jq
+    - TAG="$(jq -r .metadata.version metadata.json)"
+    - DESCRIPTION="$(jq -r .metadata.description metadata.json)"
+    - DEPLOY2ZENODO_UPLOAD="v$TAG.zip"
+    - git archive --format zip --output "$DEPLOY2ZENODO_UPLOAD" '$CI_COMMIT_SHA'
+    - echo "DESCRIPTION=$DESCRIPTION" > variables.env
+    - echo "TAG=$TAG" >> variables.env
+    - echo "DEPLOY2ZENODO_UPLOAD=$DEPLOY2ZENODO_UPLOAD" >> variables.env
+  artifacts:
+    reports:
+      dotenv: variables.env
+
+release_job:
+  stage: deploy
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+  image:
+    registry.gitlab.com/gitlab-org/release-cli:latest
+  script:
+    - apt-get update
+    - $APT_GET_INSTALL curl
+    - |
+        curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "$BASE_NAME".pdf "$PACKAGE_REGISTRY_URL/$BASE_NAME-$TAG".pdf
+    - cat /etc/os-release
+  release:
+    name: 'v$TAG'
+    description: '$DESCRIPTION'
+    tag_name: '$TAG'
+    ref: '$CI_COMMIT_SHA'
+    assets:
+      links:
+        - name: "$BASE_NAME-$TAG".pdf
+          filepath: /"$BASE_NAME".pdf
+          url: "$PACKAGE_REGISTRY_URL/$BASE_NAME-$TAG".pdf
+          link_type: other
 
 pages:
   stage: deploy
