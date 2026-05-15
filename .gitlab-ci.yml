@@ -19,11 +19,58 @@ pre-commit:
     name: alpine:latest
   extends: .display_env
   script:
-    - apk add --no-cache git npm pre-commit
+    - apk add --no-cache git jq pre-commit
     - pre-commit --version
     - pre-commit run --all-files --show-diff-on-failure
     - pre-commit autoupdate --jobs 0
     - git diff .pre-commit-config.yaml
+    - jq < metadata.json
+
+prepare_release_step1:
+  stage: build
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: $CI_PIPELINE_SOURCE != "pipeline"
+    - if: $CI_PIPELINE_SOURCE == "pipeline"
+  image:
+    name: alpine:latest
+  extends: .display_env
+  script:
+    - apk add --no-cache git jq
+    - TAG="$(jq -r .metadata.version metadata.json)"
+    - DESCRIPTION="$(jq -r .metadata.description metadata.json)"
+    - DEPLOY2ZENODO_UPLOAD="v$TAG.zip"
+    - git archive --format zip --output "$DEPLOY2ZENODO_UPLOAD" "$CI_COMMIT_SHA"
+    - echo "DESCRIPTION=$DESCRIPTION" > variables.env
+    - echo "TAG=$TAG" >> variables.env
+    - echo "DEPLOY2ZENODO_UPLOAD=$DEPLOY2ZENODO_UPLOAD" >> variables.env
+  artifacts:
+    reports:
+      dotenv: variables.env
+
+prepare_release_step2:
+  stage: build
+  rules:
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && ($CI_PROJECT_ID == "81882967" || $CI_PROJECT_ID == "81990844") && $CI_SERVER_HOST == "gitlab.com" && $CI_PIPELINE_SOURCE != "pipeline"
+  needs:
+    - job: prepare_release_step1
+      artifacts: true
+  inherit:
+    variables: false
+  variables:
+    STEP: "1"
+    TAG: $TAG
+    TAG_COMMIT_SHA: $CI_COMMIT_SHA
+    TAG_COMMIT_TIMESTAMP: $TAG_COMMIT_TIMESTAMP
+  trigger:
+    project: daniel_mohr/deploy_compact-for-space_to_zenodo
+    strategy: depend
+    forward:
+      yaml_variables: true
+      pipeline_variables: false
 
 build_pages:
   stage: build
@@ -39,6 +86,11 @@ build_pages:
   extends: .display_env
   script:
     - apt-get update
+    - $APT_GET_INSTALL pre-commit
+    - pre-commit --version
+    - pre-commit run --all-files --show-diff-on-failure --config .pre-commit-config.rubocop.yaml
+    - pre-commit autoupdate --jobs 0 --config .pre-commit-config.rubocop.yaml
+    - git diff .pre-commit-config.rubocop.yaml
     - (cd "site" && gem install bundler)
     - (cd "site" && bundler install)
     - ruby -v
@@ -89,29 +141,6 @@ build_pages:
     paths:
       - public/
       - "$BASE_NAME.pdf"
-
-prepare_release_step1:
-  stage: build
-  rules:
-    - if: $CI_COMMIT_TAG
-      when: never
-    - if: $CI_PIPELINE_SOURCE != "pipeline"
-    - if: $CI_PIPELINE_SOURCE == "pipeline"
-  image:
-    name: alpine:latest
-  extends: .display_env
-  script:
-    - apk add --no-cache cffconvert git jq
-    - TAG="$(jq -r .metadata.version metadata.json)"
-    - DESCRIPTION="$(jq -r .metadata.description metadata.json)"
-    - DEPLOY2ZENODO_UPLOAD="v$TAG.zip"
-    - git archive --format zip --output "$DEPLOY2ZENODO_UPLOAD" "$CI_COMMIT_SHA"
-    - echo "DESCRIPTION=$DESCRIPTION" > variables.env
-    - echo "TAG=$TAG" >> variables.env
-    - echo "DEPLOY2ZENODO_UPLOAD=$DEPLOY2ZENODO_UPLOAD" >> variables.env
-  artifacts:
-    reports:
-      dotenv: variables.env
 
 release_job:
   stage: deploy
