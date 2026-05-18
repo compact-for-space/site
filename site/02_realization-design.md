@@ -12,8 +12,8 @@ The design of COMPACT ensures the feasibility of the scientific research questio
     * Low minimum gas pressure
 * 4-channel RF generator
 * Multiple particle dispensers
-* Particle imaging of a thin particle slice (2D imaging system)
-* Particle imaging in a subvolume of the dust cloud (3D imaging system)
+* 2D imaging system
+* 3D imaging system
 * Plasma glow imaging
 * Laser particle manipulation system
 * UV particle manipulation system
@@ -51,15 +51,35 @@ The RF and arbitrary function generators will provide a versatile tool to manipu
 
 The particle dispensers are electromagnetic shakers. The top of the dispensor carries a small housing that contains the dust. The container is covered by a sieve that is selected according to the dust size to ensure that on the one hand sufficient amounts of dust are released into the plasma and on the other hand that particle agglomerates are suppressed.
 
-Nine dispersers with different particle sizes and geometries are foreseen.
+Nine dispersers with different particle sizes and particle geometries are foreseen.
 
 <a id="sec:2D"></a>
 
-# Particle imaging of a thin particle slice (2D imaging system)
+# 2D imaging system
+
+The 2D imaging system is intended to record the dust particles and their motion in a thin slice of the particle cloud. For that purpose, a laser beam at a wavelength of 660 nm is expanded to a sheet of about 250 µm width and 80 mm height. This laser sheet illuminates the particles in the central slice of the dust cloud. The scattered laser light is then recorded by two cameras under an angle of 90°. The cameras will be equipped with filters for the laser wavelength.
+
+The first camera, the "overview camera", records the particles in a full region between the electrodes covering an area of 160 mm width and 80 mm height. The camera has a sensor of about 9 Mpixel with digital resolution of the order of 40 µm/pixel. This overview camera allows to capture the overall behavior of the cloud. The frame rate will be a maximum of 95 fps.
+
+The second camera ("detail camera") covers a field of view of 80 mm width and 80 mm height at 20 Mpixel with a higher digital resolution of about 18 µm/pixel at a maximum frame rate of 109 fps. Hence, the detail camera images the approximately the right half of the discharge (in the direction of view of the cameras), however shifted by 10 mm over the vertical discharge axis. 
+
+The data of the two cameras together with the data from the [glow camera](#sec:glow) will be recorded by an NVIDIA Jetson and U.2 or U.3 hard drives.
 
 <a id="sec:3d"></a>
 
-# Particle imaging in a subvolume of the dust cloud (3D imaging system)
+# 3D imaging system
+
+The 3D imaging system will enable the determination of the three-dimensional particle positions and motions in a smaller subfield of the dust cloud. This will be achieved by a four-camera stereoscopic setup where the four cameras will image the same volume of the particle cloud under slightly different angles. From these different viewing directions the particle positions can be reconstructed.
+
+A system is envisaged where each camera has a sensor with 65 Mpixel at a digital resolution of about 9 µm/pixel. The four cameras have a common usable field of view of about 85 mm width and 45 mm height in the lower left region of the discharge (in viewing direction of the cameras). The frame rate of the cameras at full resolution is about 70 fps. However, the data rate will be restricted to about 900 Mpixel per second for each of the cameras. Thus, for each of the cameras a smaller region of interest (ROI) will be chosen that cover the same reduced field of view. The ROIs can be freely selected within the full usable field of view. Also size and frame rate of the ROI can be dapted to the required task and is only limited by the maximum data rate per camera. 
+
+This procedure allows to record the particle motion in different regions of the dust cloud without mechanical motion of the camera setup. This reduces the risk of failure.
+
+The dust will be illuminated with a laser beam at a wavelength of 532 nm that is expanded into a sheet of 2.5 mm width and 45 mm height. The cameras will have filters for this laser wavelength.
+
+The data of the four cameras will be recorded by a second NVIDIA Jetson with U.2 or U.3 hard drives.
+
+Both the 2D imaging system and the 3D imaging system as well as their illumination laser are mounted on a horizontal translation state that allows to move the image and laser planes through the dust cloud.  The travel range of the stage will be about 70 mm.
 
 
 <a id="sec:glow"></a>
