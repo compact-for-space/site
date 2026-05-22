@@ -3,6 +3,7 @@
 # SPDX-License-Identifier: GPL-3.0-or-later
 
 variables:
+  PACKAGE_REGISTRY_URL: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/pdfs/$TAG"
   DEBIAN_FRONTEND: noninteractive
   APT_GET_INSTALL: "apt-get install --no-install-recommends -q -y"
   BASE_NAME: "COMPACT_in_space"
