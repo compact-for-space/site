@@ -16,6 +16,10 @@ variables:
 
 pre-commit:
   stage: .pre
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "pipeline"
+      when: always
+    - when: never
   image:
     name: alpine:latest
   extends: .display_env
@@ -81,6 +85,10 @@ prepare_release_step1:
 
 build_pages:
   stage: build
+  rules:
+    - if: $CI_PIPELINE_SOURCE != "pipeline"
+      when: always
+    - when: never
   image:
     # https://hub.docker.com/_/ruby
     # based on debian
@@ -183,9 +191,13 @@ prepare_release_job:
     name: alpine:latest
   extends: .display_env
   script:
+    - env
     - apk add --no-cache curl
     - |
-      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "$BASE_NAME"."$TAG".pdf "$PACKAGE_REGISTRY_URL/$BASE_NAME.$TAG.pdf"
+      echo "upload-file: $BASE_NAME.$TAG.pdf"
+      echo "url: $PACKAGE_REGISTRY_URL/$BASE_NAME.$TAG.pdf"
+    - |
+      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "$BASE_NAME.$TAG.pdf" "$PACKAGE_REGISTRY_URL/$BASE_NAME.$TAG.pdf"
 
 release_job:
   # triggered by: https://gitlab.com/daniel_mohr/compact-for-space-site
@@ -203,6 +215,7 @@ release_job:
     DEPLOY2INVENIORDM_DEPOSITION_ID: $DEPLOY2INVENIORDM_DEPOSITION_ID
     PARENTDOI: $PARENTDOI
   needs:
+    - job: prepare_release_job
     - job: build_pages_for_release
       artifacts: true
   image:
@@ -249,21 +262,14 @@ post_release_job:
       yaml_variables: true
       pipeline_variables: false
 
-pages_after_release:
-  # triggered by: https://gitlab.com/daniel_mohr/compact-for-space-site
-  extends: pages
-  rules:
-    - if: $CI_PIPELINE_SOURCE == "pipeline" && $STEP == "2"
-  needs:
-    - job: build_pages_for_release
-      artifacts: true
-
 pages:
   stage: deploy
   image:
     name: alpine:latest
   pages: true
   rules:
+    - if: $CI_PIPELINE_SOURCE == "pipeline"
+      when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PROJECT_ID == "81882967" && $CI_SERVER_HOST == "gitlab.com"'
       when: always
     - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH && $CI_PROJECT_ID == "81882967" && $CI_SERVER_HOST == "gitlab.com"'
@@ -276,3 +282,12 @@ pages:
   extends: .display_env
   script:
     - find public/
+
+pages_after_release:
+  # triggered by: https://gitlab.com/daniel_mohr/compact-for-space-site
+  extends: pages
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "pipeline" && $STEP == "2"
+  needs:
+    - job: build_pages_for_release
+      artifacts: true
