@@ -9,7 +9,7 @@ repos:
       - id: check-merge-conflict
       - id: check-shebang-scripts-are-executable
       - id: check-symlinks
-      - id: check-yaml
+      #- id: check-yaml
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: mixed-line-ending
@@ -27,7 +27,7 @@ repos:
         name: yaml2script check for sh
         additional_dependencies:
           - shellcheck-py
-        args: ['.gitlab-ci.yml', 'variables', '.display_env', 'pre-commit', 'prepare_release_step1', 'pages']
+        args: ['.gitlab-ci.yml', 'variables', '.display_env', 'pre-commit', 'prepare_release_step0', 'prepare_release_job', 'pages']
   - repo: https://gitlab.com/yaml2script/yaml2script
     rev: 0.2.1
     hooks:
@@ -35,8 +35,12 @@ repos:
         name: yaml2script check for bash
         additional_dependencies:
           - shellcheck-py
-        args: [-shebang=#!/usr/bin/env bash, '.gitlab-ci.yml', 'build_pages', 'release_job']
+        args: [-shebang=#!/usr/bin/env bash, '.gitlab-ci.yml', 'build_pages', 'build_pages_for_release', 'release_job']
 #  - repo: https://github.com/igorshubovych/markdownlint-cli
 #    rev: v0.48.0
 #    hooks:
 #      - id: markdownlint
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.38.0
+    hooks:
+      - id: yamllint

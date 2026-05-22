@@ -13,8 +13,8 @@ Metrics/CyclomaticComplexity:
   Max: 16
 
 Metrics/ClassLength:
-    Enabled: true
-    Max: 150
+  Enabled: true
+  Max: 150
 
 # Offense count: 4
 # Configuration parameters: CountComments, CountAsOne, AllowedMethods, AllowedPatterns.
