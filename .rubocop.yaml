@@ -1,0 +1,37 @@
+AllCops:
+  NewCops: enable
+
+Layout/LineLength:
+  Max: 120
+
+Metrics/AbcSize:
+  Max: 38
+
+# Offense count: 2
+# Configuration parameters: AllowedMethods, AllowedPatterns.
+Metrics/CyclomaticComplexity:
+  Max: 16
+
+Metrics/ClassLength:
+  Enabled: true
+  Max: 150
+
+# Offense count: 4
+# Configuration parameters: CountComments, CountAsOne, AllowedMethods, AllowedPatterns.
+Metrics/MethodLength:
+  Max: 29
+
+# Offense count: 2
+# Configuration parameters: AllowedMethods, AllowedPatterns.
+Metrics/PerceivedComplexity:
+  Max: 17
+
+Style/YAMLFileRead:
+  Enabled: true
+
+Style/Documentation:
+  Exclude:
+    - '**/vendor/**'
+    - 'site/_site/**'
+    - 'public/**'
+    - '**/*.gem'

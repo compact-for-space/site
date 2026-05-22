@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "title": "compact-for-space",
+    "version": "0.0.1",
+    "description": "This repository contains the source code and build instructions for building the COMPACT for space website.",
+    "resource_type": {
+      "id": "software"
+    },
+    "creators": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "given_name": "Daniel",
+          "family_name": "Mohr",
+          "identifiers": {
+            "scheme": "orcid",
+            "identifier": "0000-0002-9382-6586"
+          }
+        },
+        "affiliations": [
+          {
+            "id": "00r1edq15",
+            "name": "University of Greifswald"
+          }
+        ]
+      }
+    ],
+    "contributors": [
+      {
+        "person_or_org": {
+          "type": "personal",
+          "given_name": "Daniel",
+          "family_name": "Mohr"
+        },
+        "role": {
+          "id": "contactperson"
+        }
+      }
+    ],
+    "keywords": [
+      "complex plasma",
+      "dusty plasma",
+      "microgravity research",
+      "COMPACT",
+      "Docs-as-Code"
+    ],
+    "rights": [
+      {
+        "id": "cc-by-sa-4.0",
+        "props": {
+          "scheme": "spdx"
+        }
+      }
+    ],
+    "related_identifiers": [
+      {
+        "relation_type": {
+          "id": "references"
+        },
+        "identifier": "10.1088/1361-6587/ac9ff0",
+        "scheme": "doi",
+        "resource_type": {
+          "id": "publication"
+        }
+      },
+      {
+        "relation_type": {
+          "id": "references"
+        },
+        "identifier": "10.5281/zenodo.20067128",
+        "scheme": "doi",
+        "resource_type": {
+          "id": "presentation"
+        }
+      }
+    ],
+    "publisher": "Zenodo"
+  }
+}
