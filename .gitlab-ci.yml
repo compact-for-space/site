@@ -183,9 +183,12 @@ prepare_release_job:
     name: alpine:latest
   extends: .display_env
   script:
+    - env
     - apk add --no-cache curl
+    - echo "upload-file: $BASE_NAME.$TAG.pdf"
+    - echo "url: $PACKAGE_REGISTRY_URL/$BASE_NAME.$TAG.pdf"
     - |
-      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "$BASE_NAME"."$TAG".pdf "$PACKAGE_REGISTRY_URL/$BASE_NAME.$TAG.pdf"
+      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "$BASE_NAME.$TAG.pdf" "$PACKAGE_REGISTRY_URL/$BASE_NAME.$TAG.pdf"
 
 release_job:
   # triggered by: https://gitlab.com/daniel_mohr/compact-for-space-site
@@ -203,6 +206,7 @@ release_job:
     DEPLOY2INVENIORDM_DEPOSITION_ID: $DEPLOY2INVENIORDM_DEPOSITION_ID
     PARENTDOI: $PARENTDOI
   needs:
+    - job: prepare_release_job
     - job: build_pages_for_release
       artifacts: true
   image:
