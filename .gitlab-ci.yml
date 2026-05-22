@@ -185,8 +185,9 @@ prepare_release_job:
   script:
     - env
     - apk add --no-cache curl
-    - echo "upload-file: $BASE_NAME.$TAG.pdf"
-    - echo "url: $PACKAGE_REGISTRY_URL/$BASE_NAME.$TAG.pdf"
+    - |
+      echo "upload-file: $BASE_NAME.$TAG.pdf"
+      echo "url: $PACKAGE_REGISTRY_URL/$BASE_NAME.$TAG.pdf"
     - |
       curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "$BASE_NAME.$TAG.pdf" "$PACKAGE_REGISTRY_URL/$BASE_NAME.$TAG.pdf"
 
