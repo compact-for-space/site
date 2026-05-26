@@ -111,8 +111,9 @@ build_pages:
     - (cd "site" && jekyll build -d ../public)
     - $APT_GET_INSTALL chromium img2pdf poppler-utils
     - chromium --version
-    - (cd "site" && bundle exec jekyll serve --host 0.0.0.0 --quiet --detach; sleep 6)
+    - (cd "site" && bundle exec jekyll serve --host 0.0.0.0 --quiet --detach)
     - until curl -f -s http://localhost:4000/ > /dev/null; do sleep 1; done
+    - sleep 1
     - mkdir -p pdfs
     - |
       FILES=(
@@ -134,15 +135,15 @@ build_pages:
       echo "idx: $idx"
       echo "path: $path"
       if [ "$path" = "index" ]; then
-      url="http://localhost:4000/"
+      # url="http://localhost:4000/"
       url="http://site-2ef4a3.gitlab.io:4000/"
       else
-      url="http://localhost:4000/${path}"
+      # url="http://localhost:4000/${path}"
       url="http://site-2ef4a3.gitlab.io:4000/${path}"
       fi
-      chromium --no-sandbox --headless --disable-gpu --page=A4 --print-to-pdf="$(pwd)"/pdfs/"${idx}".pdf "$url"
+      chromium --no-sandbox --disable-dev-shm-usage --headless --disable-gpu --page=A4 --print-to-pdf="$(pwd)"/pdfs/"${idx}".pdf "$url"
       if [ "$path" = "index" ]; then
-      chromium --no-sandbox --headless --disable-gpu --screenshot="$(pwd)"/pdfs/"${idx}".png --window-size=1024,768 "$url"
+      chromium --no-sandbox --disable-dev-shm-usage --headless --disable-gpu --screenshot="$(pwd)"/pdfs/"${idx}".png --window-size=1024,768 "$url"
       fi
       done
     - img2pdf --output pdfs/00_cover.pdf -S Letter pdfs/00_index.png
@@ -221,6 +222,8 @@ release_job:
       artifacts: true
   image:
     registry.gitlab.com/gitlab-org/release-cli:latest
+  before_script:
+    - test -n "$DESCRIPTION"
   script:
     - cat /etc/os-release
     - echo "running release_job for $TAG"
