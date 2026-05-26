@@ -239,6 +239,8 @@ release_job:
     DEPLOY2INVENIORDM_DEPOSITION_ID: $DEPLOY2INVENIORDM_DEPOSITION_ID
     PARENTDOI: $PARENTDOI
   needs:
+    - job: prepare_release_step0
+      artifacts: true
     - job: prepare_release_job
     - job: build_pages_for_release
       artifacts: true
