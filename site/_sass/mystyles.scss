@@ -1,0 +1,15 @@
+.license {
+    @include relative-font-size(0.75);
+    color: #666;
+    text-align: right;
+    margin: 1rem 0;
+    margin-right: $spacing-unit * 0.5;
+}
+
+.doi {
+    @include relative-font-size(0.75);
+    color: #666;
+    text-align: right;
+    margin: 1rem 0;
+    margin-right: $spacing-unit * 0.5;
+}

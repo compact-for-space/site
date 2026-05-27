@@ -32,24 +32,41 @@
 
   </div>
 
-  <!-- license based on page.license) -->
-  <div class="wrapper license-notice">
-    {%- if page.license -%}
-    {%- assign lic = page.license | downcase -%}
-    {%- if page.license == "CC0" -%}
-    Content is dedicated to the public domain under
-    <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.
-    {%- elsif page.license == "CC-BY-SA-4.0" -%}
-    Content is licensed under
-    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
-    {%- else -%}
-    Content is licensed under
-    <strong>{{ page.license }}</strong>.
-    {%- endif -%}
-    {%- else -%}
-    <!-- default license -->
-    Unless otherwise noted, content on this site is licensed under
-    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
-    {%- endif -%}
+  <div class="site-footer">
+    <!-- license based on page.license -->
+    <div class="license">
+      {%- if page.license -%}
+      {%- assign lic = page.license | downcase -%}
+      {%- if page.license == "CC0" -%}
+      Content is dedicated to the public domain under
+      <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.
+      {%- elsif page.license == "CC-BY-SA-4.0" -%}
+      Content is licensed under
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+      {%- else -%}
+      Content is licensed under
+      <strong>{{ page.license }}</strong>.
+      {%- endif -%}
+      {%- else -%}
+      <!-- default license -->
+      Unless otherwise noted, content on this site is licensed under
+      <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+      {%- endif -%}
+    </div>
+
+    <!-- DOI from environment variable via use_env.rb or config -->
+    <div class="doi">
+      {% if site.env.DOI %}
+      DOI of this website: <a href="https://doi.org/{{ site.env.DOI }}">{{ site.env.DOI }}</a>
+      {%- elsif site.doi -%}
+      {%- assign lower_doi = site.doi | strip | downcase -%}
+      {%- if lower_doi == "tbd" -%}
+      DOI of this website: {{ site.doi }}
+      {%- else -%}
+      DOI of this website: <a href="https://doi.org/{{ site.doiI }}">{{ site.doi }}</a>
+      {% endif %}
+      {%- else -%}
+      {% endif %}
+    </div>
   </div>
 </footer>
