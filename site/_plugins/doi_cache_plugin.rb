@@ -1,3 +1,7 @@
+# SPDX-FileCopyrightText: 2026 Daniel Mohr
+#
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
 # frozen_string_literal: true
 
 puts 'DOI Plugin is loading...'

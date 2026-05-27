@@ -1,0 +1,17 @@
+<link rel="sitemap" type="application/xml" title="Sitemap" href="{{ "sitemap.xml" | relative_url }}">
+
+<!-- Dublin Core Metadata -->
+<link rel=schema.DC href="http://purl.org/dc/elements/1.1/" />
+<link rel=schema.DCTERMS href="http://purl.org/dc/terms/" />
+
+{% if page.license %}
+{%- if page.license == "CC0" -%}
+<meta name="DC.rights.license" content="https://creativecommons.org/publicdomain/zero/1.0/">
+{%- elsif page.license == "CC-BY-SA-4.0" -%}
+<meta name="DC.rights.license" content="https://creativecommons.org/licenses/by-sa/4.0/">
+{%- else -%}
+<meta name="DC.rights.license" content="{{ page.license }}">
+{%- endif -%}
+{%- else -%}
+<meta name="DC.rights.license" content="https://creativecommons.org/licenses/by-sa/4.0/">
+{%- endif -%}
