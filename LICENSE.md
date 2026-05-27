@@ -18,6 +18,6 @@ A full copy of this license is available at:
 Individual files or components may be licensed under different terms.
 
 Please verify the licensing information for each file
-(e.g., in SPDX-License-Identifier tags, header comments).  
+(e.g., in SPDX-License-Identifier tags, header comments).
 In the absence of an explicit license statement,
 **CC BY-SA 4.0 applies by default**.
