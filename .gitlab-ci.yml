@@ -202,6 +202,7 @@ build_pages_for_release:
     - echo "DOI=$DOI"
     - echo "DEPLOY2INVENIORDM_DEPOSITION_ID=$DEPLOY2INVENIORDM_DEPOSITION_ID"
     - echo "PARENTDOI=$PARENTDOI"
+    - export DOI
 
 prepare_release_job:
   # triggered by: https://gitlab.com/daniel_mohr/compact-for-space-site
