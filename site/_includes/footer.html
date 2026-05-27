@@ -1,0 +1,55 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">{{ site.title | escape }}</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li class="p-name">
+            {%- if site.author -%}
+              {{ site.author | escape }}
+            {%- else -%}
+              {{ site.title | escape }}
+            {%- endif -%}
+            </li>
+            {%- if site.email -%}
+            <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+            {%- endif -%}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        {%- include social.html -%}
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>{{- site.description | escape -}}</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- license based on page.license) -->
+  <div class="wrapper license-notice">
+    {%- if page.license -%}
+    {%- assign lic = page.license | downcase -%}
+    {%- if page.license == "CC0" -%}
+    Content is dedicated to the public domain under
+    <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.
+    {%- elsif page.license == "CC-BY-SA-4.0" -%}
+    Content is licensed under
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+    {%- else -%}
+    Content is licensed under
+    <strong>{{ page.license }}</strong>.
+    {%- endif -%}
+    {%- else -%}
+    <!-- default license -->
+    Unless otherwise noted, content on this site is licensed under
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+    {%- endif -%}
+  </div>
+</footer>
