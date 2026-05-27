@@ -32,11 +32,11 @@
 
   </div>
 
-  <div class="site-footer">
+  <div class="site-footer-info">
     <!-- license based on page.license -->
-    <div class="license">
+    <div class="license-item">
+      <span class="sep">|</span>
       {%- if page.license -%}
-      {%- assign lic = page.license | downcase -%}
       {%- if page.license == "CC0" -%}
       Content is dedicated to the public domain under
       <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.
@@ -55,10 +55,12 @@
     </div>
 
     <!-- DOI from environment variable via use_env.rb or config -->
-    <div class="doi">
+    <div class="doi-item">
       {% if site.env.DOI %}
+      <span class="sep">|</span>
       DOI of this website: <a href="https://doi.org/{{ site.env.DOI }}">{{ site.env.DOI }}</a>
       {%- elsif site.doi -%}
+      <span class="sep">|</span>
       {%- assign lower_doi = site.doi | strip | downcase -%}
       {%- if lower_doi == "tbd" -%}
       DOI of this website: {{ site.doi }}
@@ -68,5 +70,14 @@
       {%- else -%}
       {% endif %}
     </div>
+
+    <!-- CI_COMMIT_SHA from environment variable via use_env.rb -->
+    {% if site.env.CI_COMMIT_SHA %}
+    <div class="commit-item">
+      <span class="sep">|</span>
+      commit revision: {{ site.env.CI_COMMIT_SHA }}
+      <span class="sep">|</span>
+    </div>
+    {% endif %}
   </div>
 </footer>
