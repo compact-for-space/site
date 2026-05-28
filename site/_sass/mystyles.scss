@@ -1,0 +1,21 @@
+.site-footer-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  @include relative-font-size(0.75);
+  color: #666;
+  margin: 1rem 0;
+  margin-right: $spacing-unit * 0.5;
+}
+
+.sep {
+  color: #ccc;
+  margin: 0 0.25rem;
+}
+
+.license-item, .doi-item, .commit-item {
+  margin: 0;
+  white-space: nowrap;
+}

@@ -4,6 +4,7 @@ permalink: /publications/
 title: publications
 description: "A comprehensive list of scientific publications and research contributions regarding COMPACT and complex plasma physics. Advancing our understanding of complex plasmas using microgravity."
 author: Daniel Mohr
+license: CC0
 ---
 
 {% assign all_entries = "" %}
@@ -70,3 +71,9 @@ author: Daniel Mohr
   </li>
 {% endfor %}
 </ul>
+
+The publication list is dedicated to the public domain under
+[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+
+Licensing for the content of individual publications is determined by their
+respective rights holders and should be verified per work.

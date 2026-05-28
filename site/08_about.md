@@ -5,7 +5,13 @@ title: about
 tagline: Exploring Complex Plasmas in Microgravity
 description: This is a non-commercial website dedicated to a scientific project focusing on the development of a future complex plasma facility.
 author: Daniel Mohr
+license: CC-BY-SA-4.0
 ---
+<!--
+SPDX-FileCopyrightText: 2026 COMPACT-for-space contributors
+
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
 
 This is a non-commercial website dedicated to a scientific project
 focusing on the development of a future complex plasma facility.
@@ -30,3 +36,14 @@ This website serves as a platform to present the research and progress of the CO
 To contribute to this project and website, please follow the standard
 software development workflow described in the README of the GitLab project
 [gitlab.com/projects/81882967](https://gitlab.com/projects/81882967).
+
+## License
+
+Unless otherwise noted, all content is licensed under
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+The publication list is dedicated to the
+[CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/).
+
+Licensing for the content of individual publications is determined by their
+respective rights holders and should be verified per work.

@@ -1,6 +1,6 @@
-# SPDX-FileCopyrightText: 2026 Daniel Mohr
+# SPDX-FileCopyrightText: 2026 COMPACT-for-space contributors
 #
-# SPDX-License-Identifier: GPL-3.0-or-later
+# SPDX-License-Identifier: CC-BY-SA-4.0
 
 variables:
   PACKAGE_REGISTRY_URL: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/pdfs/$TAG"
@@ -18,7 +18,13 @@ variables:
 pre-commit:
   stage: .pre
   rules:
-    - if: $CI_PIPELINE_SOURCE != "pipeline"
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "pipeline"
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "push"
       when: always
     - when: never
   image:
@@ -35,9 +41,19 @@ pre-commit:
 prepare_release_step0:
   stage: build
   rules:
+    - if: $CI_PIPELINE_SOURCE == "pipeline" && $STEP == "2"
+      when: always
     - if: $CI_COMMIT_TAG
       when: never
-    - when: always
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && ($CI_PROJECT_ID == "81882967" || $CI_PROJECT_ID == "81990844") && $CI_SERVER_HOST == "gitlab.com" && $CI_PIPELINE_SOURCE != "pipeline"
+      when: always
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "pipeline"
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "push"
+      when: always
+    - when: never
   image:
     name: alpine:latest
   extends: .display_env
@@ -87,7 +103,13 @@ prepare_release_step1:
 build_pages:
   stage: build
   rules:
-    - if: $CI_PIPELINE_SOURCE != "pipeline"
+    - if: $CI_COMMIT_TAG
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "pipeline"
+      when: never
+    - if: $CI_PIPELINE_SOURCE == "push"
       when: always
     - when: never
   image:
@@ -111,8 +133,9 @@ build_pages:
     - (cd "site" && jekyll build -d ../public)
     - $APT_GET_INSTALL chromium img2pdf poppler-utils
     - chromium --version
-    - (cd "site" && bundle exec jekyll serve --host 0.0.0.0 --quiet --detach; sleep 6)
+    - (cd "site" && bundle exec jekyll serve --host 0.0.0.0 --quiet --detach)
     - until curl -f -s http://localhost:4000/ > /dev/null; do sleep 1; done
+    - sleep 1
     - mkdir -p pdfs
     - |
       FILES=(
@@ -134,15 +157,15 @@ build_pages:
       echo "idx: $idx"
       echo "path: $path"
       if [ "$path" = "index" ]; then
-      url="http://localhost:4000/"
+      # url="http://localhost:4000/"
       url="http://site-2ef4a3.gitlab.io:4000/"
       else
-      url="http://localhost:4000/${path}"
+      # url="http://localhost:4000/${path}"
       url="http://site-2ef4a3.gitlab.io:4000/${path}"
       fi
-      chromium --no-sandbox --headless --disable-gpu --page=A4 --print-to-pdf="$(pwd)"/pdfs/"${idx}".pdf "$url"
+      chromium --no-sandbox --disable-dev-shm-usage --headless --disable-gpu --page=A4 --print-to-pdf="$(pwd)"/pdfs/"${idx}".pdf "$url"
       if [ "$path" = "index" ]; then
-      chromium --no-sandbox --headless --disable-gpu --screenshot="$(pwd)"/pdfs/"${idx}".png --window-size=1024,768 "$url"
+      chromium --no-sandbox --disable-dev-shm-usage --headless --disable-gpu --screenshot="$(pwd)"/pdfs/"${idx}".png --window-size=1024,768 "$url"
       fi
       done
     - img2pdf --output pdfs/00_cover.pdf -S Letter pdfs/00_index.png
@@ -216,11 +239,15 @@ release_job:
     DEPLOY2INVENIORDM_DEPOSITION_ID: $DEPLOY2INVENIORDM_DEPOSITION_ID
     PARENTDOI: $PARENTDOI
   needs:
+    - job: prepare_release_step0
+      artifacts: true
     - job: prepare_release_job
     - job: build_pages_for_release
       artifacts: true
   image:
     registry.gitlab.com/gitlab-org/release-cli:latest
+  before_script:
+    - test -n "$DESCRIPTION"
   script:
     - cat /etc/os-release
     - echo "running release_job for $TAG"
@@ -269,11 +296,13 @@ pages:
     name: alpine:latest
   pages: true
   rules:
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+      when: never
+    - if: $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME
+      when: never
     - if: $CI_PIPELINE_SOURCE == "pipeline"
       when: never
-    - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && $CI_PROJECT_ID == "81882967" && $CI_SERVER_HOST == "gitlab.com"'
-      when: always
-    - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH && $CI_PROJECT_ID == "81882967" && $CI_SERVER_HOST == "gitlab.com"'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && ($CI_PROJECT_ID == "81882967" || $CI_PROJECT_ID == "81990844") && $CI_SERVER_HOST == "gitlab.com" && $CI_PIPELINE_SOURCE != "pipeline"
       when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       when: always
@@ -282,6 +311,7 @@ pages:
     - when: never
   extends: .display_env
   script:
+    - env
     - find public/
 
 pages_after_release:

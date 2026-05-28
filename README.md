@@ -4,6 +4,11 @@ stable link: https://gitlab.com/projects/81882967
 mirror: https://github.com/compact-for-space/site/
 doi: tbd
 ---
+<!--
+SPDX-FileCopyrightText: 2026 COMPACT-for-space contributors
+
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
 
 # compact-for-space
 
@@ -61,3 +66,11 @@ to the original repository. Please provide a clear description of the changes
 you have made.
 
 ![create merge request](images/create-merge-request.png)
+
+## License
+
+Unless otherwise noted, all content is licensed under
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+See [LICENSE.md](LICENSE.md) and the [LICENSES/](LICENSES/) directory
+for details.
