@@ -48,7 +48,7 @@ pre-commit:
 check_tag_exists:
   stage: pre
   rules:
-    - if: $CI_MERGE_REQUEST_IID
+    - if: $CI_MERGE_REQUEST_PROJECT_ID
       when: always
     - when: never
   image:
