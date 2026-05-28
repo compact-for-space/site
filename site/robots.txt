@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://site-2ef4a3.gitlab.io/sitemap.xml
