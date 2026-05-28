@@ -48,13 +48,13 @@ pre-commit:
 check_tag_exists:
   stage: pre
   rules:
-    - if: 
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
       when: always
     - when: never
   image:
     name: alpine:latest
   extends: .display_env
-  script:$CI_PIPELINE_SOURCE == "merge_request_event"
+  script:
     - apk add --no-cache jq curl
     - TAG="$(jq -r .metadata.version metadata.json)"
     - test -n "$TAG"
