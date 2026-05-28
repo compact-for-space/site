@@ -7,6 +7,7 @@ variables:
   DEBIAN_FRONTEND: noninteractive
   APT_GET_INSTALL: "apt-get install --no-install-recommends -q -y"
   BASE_NAME: "COMPACT_in_space"
+  SITE_ARCHIVE_BASE_NAME: "COMPACT_in_space.public"
   JEKYLL_ENV: production
 
 .display_env:
@@ -216,12 +217,18 @@ prepare_release_job:
   extends: .display_env
   script:
     - env
-    - apk add --no-cache curl
+    - apk add --no-cache curl zip
     - |
       echo "upload-file: $BASE_NAME.$TAG.pdf"
       echo "url: $PACKAGE_REGISTRY_URL/$BASE_NAME.$TAG.pdf"
     - |
       curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "$BASE_NAME.$TAG.pdf" "$PACKAGE_REGISTRY_URL/$BASE_NAME.$TAG.pdf"
+    - zip -r "$SITE_ARCHIVE_BASE_NAME.$TAG".zip public
+    - |
+      echo "upload-file: $SITE_ARCHIVE_BASE_NAME.$TAG.zip"
+      echo "url: $PACKAGE_REGISTRY_URL/$SITE_ARCHIVE_BASE_NAME.$TAG.zip"
+    - |
+      curl --header "JOB-TOKEN: ${CI_JOB_TOKEN}" --upload-file "$SITE_ARCHIVE_BASE_NAME.$TAG.zip" "$PACKAGE_REGISTRY_URL/$SITE_ARCHIVE_BASE_NAME.$TAG.zip"
 
 release_job:
   # triggered by: https://gitlab.com/daniel_mohr/compact-for-space-site
@@ -263,6 +270,10 @@ release_job:
           filepath: "/$BASE_NAME.$TAG.pdf"
           url: "$PACKAGE_REGISTRY_URL/$BASE_NAME.$TAG.pdf"
           link_type: other
+        - name: "$SITE_ARCHIVE_BASE_NAME.$TAG.zip"
+          filepath: "/$SITE_ARCHIVE_BASE_NAME.$TAG.zip"
+          url: "$PACKAGE_REGISTRY_URL/$SITE_ARCHIVE_BASE_NAME.$TAG.zip"
+          link_type: other
   artifacts:
     paths:
       - "$DOI.svg"
@@ -296,6 +307,8 @@ pages:
     name: alpine:latest
   pages: true
   rules:
+    - if: $CI_COMMIT_TAG
+      when: never
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
       when: never
     - if: $CI_MERGE_REQUEST_SOURCE_BRANCH_NAME
@@ -311,7 +324,6 @@ pages:
     - when: never
   extends: .display_env
   script:
-    - env
     - find public/
 
 pages_after_release:
