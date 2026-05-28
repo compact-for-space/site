@@ -2,6 +2,12 @@
 #
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
+stages:
+  - pre
+  - build
+  - test
+  - deploy
+
 variables:
   PACKAGE_REGISTRY_URL: "${CI_API_V4_URL}/projects/${CI_PROJECT_ID}/packages/generic/pdfs/$TAG"
   DEBIAN_FRONTEND: noninteractive
@@ -40,7 +46,7 @@ pre-commit:
     - jq < metadata.json
 
 check_tag_exists:
-  stage: .pre
+  stage: pre
   rules:
     - if: $CI_PIPELINE_SOURCE == "merge_request_event"
       when: always
