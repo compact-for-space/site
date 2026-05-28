@@ -69,7 +69,7 @@ Adapt version `.metadata.version` in [`metadata.json`](metadata.json) following
 semantic versioning (cf. [semver.org](https://semver.org/))
 
 Important: Ensure that the version tag (`.metadata.version`) in `metadata.json`
-does not already exist in the repository. 
+does not already exist in the repository.
 
 #### 6. create a merge request
 
