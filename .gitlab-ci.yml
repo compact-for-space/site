@@ -343,6 +343,8 @@ pages:
       when: never
     - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH && ($CI_PROJECT_ID == "81882967" || $CI_PROJECT_ID == "81990844") && $CI_SERVER_HOST == "gitlab.com" && $CI_PIPELINE_SOURCE != "pipeline"
       when: never
+    - if: $CI_COMMIT_BRANCH == "contributions"
+      when: never
     - if: '$CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH'
       when: always
     - if: '$CI_COMMIT_BRANCH != $CI_DEFAULT_BRANCH'
