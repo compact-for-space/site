@@ -1,17 +1,24 @@
+# SPDX-FileCopyrightText: 2026 COMPACT-for-space contributors
+#
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:
       - id: check-added-large-files
-      - id: check-ast
       - id: check-case-conflict
       - id: check-executables-have-shebangs
-      - id: check-shebang-scripts-are-executable
+      - id: check-json
       - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
       - id: check-symlinks
+      #- id: check-yaml
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: mixed-line-ending
+      - id: pretty-format-json
+        args: [--no-sort-keys]
       - id: trailing-whitespace
   - repo: https://github.com/shellcheck-py/shellcheck-py
     rev: v0.11.0.1
@@ -20,10 +27,24 @@ repos:
   - repo: https://gitlab.com/yaml2script/yaml2script
     rev: 0.2.1
     hooks:
-      - id: yaml2script-all
+      - id: yaml2script-check
+        name: yaml2script check for sh
         additional_dependencies:
           - shellcheck-py
+        args: ['.gitlab-ci.yml', 'variables', '.display_env', 'pre-commit', 'prepare_release_step0', 'prepare_release_job', 'pages']
+  - repo: https://gitlab.com/yaml2script/yaml2script
+    rev: 0.2.1
+    hooks:
+      - id: yaml2script-check
+        name: yaml2script check for bash
+        additional_dependencies:
+          - shellcheck-py
+        args: [-shebang=#!/usr/bin/env bash, '.gitlab-ci.yml', 'build_pages', 'build_pages_for_release', 'release_job']
 #  - repo: https://github.com/igorshubovych/markdownlint-cli
 #    rev: v0.48.0
 #    hooks:
 #      - id: markdownlint
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.38.0
+    hooks:
+      - id: yamllint

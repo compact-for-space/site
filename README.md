@@ -4,6 +4,11 @@ stable link: https://gitlab.com/projects/81882967
 mirror: https://github.com/compact-for-space/site/
 doi: tbd
 ---
+<!--
+SPDX-FileCopyrightText: 2026 COMPACT-for-space contributors
+
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
 
 # compact-for-space
 
@@ -19,7 +24,8 @@ please follow the standard software development workflow:
 
 1. Fork the repository
 2. Branch for your changes (recommended)
-3. Submit a Merge Request
+3. Create your content and add yourself as contributor in `metadata.json`
+4. Submit a Merge Request
 
 ### Detailed Steps
 
@@ -45,10 +51,26 @@ manage multiple contributions.
 Alternatively, you may use a single developer branch in your fork
 if you wish to reduce the total number of branches.
 
-#### 3. create a merge request
+#### Implement Changes
+
+Create your content or fix the bugs.
+
+Important: If you are adding a new page or significant content,
+remember to add your name and details to `metadata.json` to be credited
+as a contributor.
+
+#### 4. create a merge request
 
 Once you have pushed your changes to your fork, open a merge request (MR)
 to the original repository. Please provide a clear description of the changes
 you have made.
 
 ![create merge request](images/create-merge-request.png)
+
+## License
+
+Unless otherwise noted, all content is licensed under
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+See [LICENSE.md](LICENSE.md) and the [LICENSES/](LICENSES/) directory
+for details.

@@ -1,11 +1,22 @@
-# coding: utf-8
-puts "DOI Plugin is loading..."
+# SPDX-FileCopyrightText: 2026 Daniel Mohr
+#
+# SPDX-License-Identifier: CC-BY-SA-4.0
+
+# frozen_string_literal: true
+
+puts 'DOI Plugin is loading...'
+
 require 'net/http'
 require 'json'
 require 'uri'
 require 'yaml'
 require 'openssl'
 
+# DOI Cache Plugin
+#
+# This plugin generates a cache of publication metadata (title, authors, date)
+# by fetching data from doi.org. It processes `publications.yaml`
+# and updates `doi_cache.yaml` automatically.
 class DoiCachePlugin < Jekyll::Generator
   def generate(site)
     pubs_path = File.join(site.source, '_data', 'publications.yaml')
@@ -26,14 +37,10 @@ class DoiCachePlugin < Jekyll::Generator
       has_link = pub['doi'] || pub['url']
       is_complete = has_core_data && has_link
 
-      if is_complete
-        next
-      end
+      next if is_complete
 
       # STEP 2: Check if data already exists in the cache file.
-      if cache.key?(doi)
-        next
-      end
+      next if cache.key?(doi)
 
       # STEP 3: Perform API request if data is missing.
       puts "-----------------> Fetching DOI (Missing Data): #{doi}..."
@@ -50,7 +57,7 @@ class DoiCachePlugin < Jekyll::Generator
 
     if updated_cache
       puts "Saving minimized cache to #{cache_path}..."
-      File.open(cache_path, 'w') { |f| f.write(cache.to_yaml) }
+      File.write(cache_path, cache.to_yaml)
     end
     site.data['doi_cache'] = cache
   end
@@ -69,7 +76,7 @@ class DoiCachePlugin < Jekyll::Generator
   # Tries to find the most precise date available in the JSON metadata.
   def extract_best_date(meta)
     date_source = meta['issued'] || meta['created'] || meta['published-print']
-    return "0000-01-01" unless date_source
+    return '0000-01-01' unless date_source
 
     if date_source.is_a?(Hash) && date_source['date-parts']
       parts = date_source['date-parts'][0]
@@ -84,46 +91,47 @@ class DoiCachePlugin < Jekyll::Generator
       # If it's just "2022", make it "2022-01-01"
       return date_source.length == 4 ? "#{date_source}-01-01" : date_source
     end
-    "0000-01-01"
+    '0000-01-01'
   end
 
   def fetch_with_redirects(doi, limit = 5)
-    raise "Too many redirects" if limit == 0
+    raise 'Too many redirects' if limit.zero?
+
     uri = URI.parse("https://doi.org/#{doi}")
     http = Net::HTTP.new(uri.hostname, uri.port)
     http.use_ssl = true
     request = Net::HTTP::Get.new(uri)
-    request["Accept"] = "application/vnd.citationstyles.csl+json;q=1.0, application/json"
-    request["User-Agent"] = "JekyllDoiPlugin/1.0"
+    request['Accept'] = 'application/vnd.citationstyles.csl+json;q=1.0, application/json'
+    request['User-Agent'] = 'JekyllDoiPlugin/1.0'
     response = http.request(request)
     case response
     when Net::HTTPSuccess then JSON.parse(response.body)
     when Net::HTTPRedirection then fetch_url_with_redirects(response['location'], limit - 1)
-    else nil
     end
   end
 
   def fetch_url_with_redirects(url, limit = 5)
-    raise "Too many redirects" if limit == 0
+    raise 'Too many redirects' if limit.zero?
+
     uri = URI.parse(url)
     http = Net::HTTP.new(uri.hostname, uri.port)
     http.use_ssl = (uri.scheme == 'https')
     request = Net::HTTP::Get.new(uri)
-    request["Accept"] = "application/vnd.citationstyles.csl+json;q=1.0, application/json"
-    request["User-Agent"] = "JekyllDoiPlugin/1.0"
+    request['Accept'] = 'application/vnd.citationstyles.csl+json;q=1.0, application/json'
+    request['User-Agent'] = 'JekyllDoiPlugin/1.0'
     response = http.request(request)
     case response
     when Net::HTTPSuccess then JSON.parse(response.body)
     when Net::HTTPRedirection then fetch_url_with_redirects(response['location'], limit - 1)
-    else nil
     end
   end
 
   def valid_metadata?(meta)
     has_title = (meta['title'].is_a?(Array) ? !meta['title'].empty? : !meta['title'].nil?)
     has_authors = meta['author'].is_a?(Array) && !meta['author'].empty?
-    has_date = (meta['issued'] || meta['created'] || meta['published-print'])
+    has_date = meta['issued'] || meta['created'] || meta['published-print']
     has_title && has_authors && has_date
   end
 end
-puts "DOI Plugin loaded"
+
+puts 'DOI Plugin loaded'

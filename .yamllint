@@ -2,8 +2,8 @@
 #
 # SPDX-License-Identifier: CC-BY-SA-4.0
 
-*~
-public/
-site/Gemfile.lock
-site/_site/
-site/_data/doi_cache.yaml
+extends: default
+
+rules:
+  line-length:
+    level: warning
