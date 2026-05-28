@@ -31,7 +31,7 @@ repos:
         name: yaml2script check for sh
         additional_dependencies:
           - shellcheck-py
-        args: ['.gitlab-ci.yml', 'variables', '.display_env', 'pre-commit', 'prepare_release_step0', 'prepare_release_job', 'pages']
+        args: ['.gitlab-ci.yml', 'variables', '.display_env', 'pre-commit', 'check_tag_exists', 'prepare_release_step0', 'prepare_release_job', 'pages']
   - repo: https://gitlab.com/yaml2script/yaml2script
     rev: 0.2.1
     hooks:
