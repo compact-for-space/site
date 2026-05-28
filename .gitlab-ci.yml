@@ -58,7 +58,8 @@ check_tag_exists:
     - apk add --no-cache jq curl
     - TAG="$(jq -r .metadata.version metadata.json)"
     - test -n "$TAG"
-    - echo "check if tag $TAG is already used in https://${CI_SERVER_HOST}/api/v4/projects/${CI_MERGE_REQUEST_PROJECT_ID}/repository/tags for merge request $CI_MERGE_REQUEST_IID ($CI_MERGE_REQUEST_ID)"
+    - |
+      echo "check if tag $TAG is already used in https://${CI_SERVER_HOST}/api/v4/projects/${CI_MERGE_REQUEST_PROJECT_ID}/repository/tags for merge request $CI_MERGE_REQUEST_IID ($CI_MERGE_REQUEST_ID)"
     - |
       TAG_EXISTS=$(curl --silent --fail "https://${CI_SERVER_HOST}/api/v4/projects/${CI_MERGE_REQUEST_PROJECT_ID}/repository/tags" | jq -r --arg tag "$TAG" '.[] | select(.name == $tag) | .name')
     - test -z "$TAG_EXISTS"
