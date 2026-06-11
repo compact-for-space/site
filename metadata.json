@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "compact-for-space",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "This repository contains the source code and build instructions for building the COMPACT for space website.",
     "resource_type": {
       "id": "software"
