@@ -1,0 +1,219 @@
+<svg width="512" height="512" viewBox="0 0 512 512"
+     xmlns="http://www.w3.org/2000/svg">
+  <!-- The COMPACT project logo design, illustrating the visual
+       representation of space-based complex plasma experiments. The design
+       balances scientific accuracy with functional requirements, emphasizing
+       accessibility, scalability, and clear symbolic communication of the
+       mission's identity across various media, while honoring the historical
+       lineage of Complex Plasma experiments that preceded it.
+       The image is structured into three distinct spatial layers, each
+       representing a different aspect of the scientific endeavor:
+       the current active experiment, the physical environment, and the
+       historical legacy of the research community.
+       The ghosts watch over the new experiment, ensuring that the historical
+       context is never forgotten in the pursuit of new discoveries in
+       microgravity.
+  -->
+
+  <title id="compactTitle">COMPACT -- Complex Plasma Experiment Logo</title>
+  <desc id="compactDesc">
+    The logo shows a top‑down view of the COMPACT plasma chamber floating in
+    black space. A purple‑pink radial gradient depicts the argon plasma, a red
+    horizontal laser line cuts through it, and a white “C”‑shaped ring
+    represents the aluminium wall. Small white dots are background dust grains.
+    Four coloured star‑shaped ghosts (PKE‑1, PK‑2, PK‑3+ / Nefedov, and PK‑4)
+    orbit outside the chamber, symbolising the historical lineage.
+    Five bright red dots (the COMPACT particles) sit inside the laser plane,
+    representing the current mission.
+  </desc>
+
+  <defs>
+    <!-- Plasma Gradient: Represents the volumetric glow of the argon plasma.
+         High density at the center, fading to the edges for a stylized look.
+    -->
+    <radialGradient id="argonPlasmaDense" cx="50%" cy="50%" r="50%" fx="50%"
+                    fy="50%">
+      <!-- real argon color
+      <stop offset="0%" stop-color="#ea7fea" stop-opacity="1" />
+      <stop offset="33%" stop-color="#aa5fd6" stop-opacity="0.8" />
+      <stop offset="66%" stop-color="#8a599c" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+      -->
+      <!-- similar argon color with better contrast to particle -->
+      <stop offset="0%" stop-color="#80d4ff" stop-opacity="1" />
+      <stop offset="33%" stop-color="#40a0ff" stop-opacity="0.8" />
+      <stop offset="66%" stop-color="#2060ff" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Glow Filter for Particles: Creates a soft blur around the dust grains.
+    -->
+    <filter id="particleGlow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Shadow Filter for Ghosts: Makes the 'past missions' look faint and
+	 blurry, symbolizing their historical legacy. -->
+    <filter id="ghostShadow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+    </filter>
+    
+    <!-- Glow Filter for Main Ghosts: Subtle highlight for the current mission
+	 ghosts. -->
+    <filter id="ghostGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background: Pure black represents the vacuum of space and the ISS
+       laboratory environment, evoking weightlessness and microgravity
+       conditions. -->
+  <rect width="512" height="512" fill="black" />
+
+  <!-- 1. Argon Plasma (Stylized Top-Down View) -->
+  <!-- A soft radial gradient simulates the volumetric glow of the argon plasma.
+       The density is highest at the center and fades to the edges.
+       This artistic stylization ensures high visual impact ("plakativ") and
+       clarity. -->
+  <circle cx="256" cy="256" r="220" fill="url(#argonPlasmaDense)" />
+
+  <!-- 2. Laser Plane (660 nm Investigation Beam) -->
+  <!-- Representing the red laser plane used for particle observation.
+       Positioned behind the chamber wall to create a sense of depth and visual
+       anchoring. -->
+  <line x1="0" y1="256" x2="480" y2="256" stroke="#cc0000" stroke-width="6"
+	stroke-linecap="round" />
+
+  <!-- 3. Plasma Chamber (Aluminum Boundary) -->
+  <!-- High-contrast white ring symbolizing the aluminum cylindrical wall.
+       Provides structural clarity and ensures visibility in grayscale.
+       Open "C" shape for COMPACT -->
+  <circle cx="256" cy="256" r="200" stroke="#ffffff" stroke-width="12"
+          fill="none" stroke-dasharray="1068.1415022205297"
+	  stroke-dashoffset="-94.2477796076938" stroke-linecap="round" />
+
+  <!-- 4. Dust Particles (Complex Plasma Background Grains) -->
+  <!-- Subtle white dots representing minor dust grains outside of the laser
+       sheet. Kept at low opacity to not distract from the main features. -->
+  <g filter="url(#particleGlow)">
+    <!-- More particles in a structure -->
+    <circle cx="211" cy="215" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="169" cy="290" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="249" cy="292" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="209" cy="311" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="293" cy="287" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="270" cy="221" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="333" cy="222" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="161" cy="206" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="275" cy="321" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="325" cy="311" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="301" cy="188" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="246" cy="181" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="195" cy="170" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="231" cy="133" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="280" cy="136" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="341" cy="155" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="367" cy="194" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="170" cy="327" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="233" cy="365" r="8" fill="rgba(255, 255, 255, 0.2)" />
+    <circle cx="304" cy="362" r="8" fill="rgba(255, 255, 255, 0.2)" />
+  </g>
+
+  <!-- 5. The Ghosts of PKE History (Outside the Chamber in Outer Space)
+       Four 'Pac-Man' spirits orbiting outside the chamber wall.
+       They symbolize the historical lineage of Complex Plasma research
+       missions. They watch over the current experiment from the
+       outer space. -->
+  <path id="starShape" d="M0,-12 L2.7,-3.7 L11.4,-3.7 L4.4,1.4 L7.1,10.3 L0,5.2 L-7.1,10.3 L-4.4,1.4 L-11.4,-3.7 L-2.7,-3.7 Z" />
+  <!-- PKE 1 (Blinky - Red)
+       Represents the first generation of Complex Plasma experiments (MIR).
+       Red often symbolizes the beginning or the core energy of the research.
+  -->
+  <g transform="translate(441, 37)">
+    <use href="#starShape" fill="#ff0000" opacity="0.5"
+	 filter="url(#ghostGlow)" />
+    <text x="0" y="0.35em" font-family="Arial, sans-serif" font-size="3"
+	  font-weight="bold" fill="white" text-anchor="middle"
+	  dominant-baseline="central" opacity="0.9">PK-1</text>
+  </g>
+
+  <!-- PK-2 (Clyde - Orange / MIR)
+       Represents the second generation of experiments on MIR.
+       Orange serves as a bridge between the early red origins and the more
+       developed later missions.
+  -->
+  <g transform="translate(402, 455)">
+    <use href="#starShape" fill="#ffb873" opacity="0.5"
+	 filter="url(#ghostGlow)" />
+    <text x="0" y="0.35em" font-family="Arial, sans-serif" font-size="3"
+	  font-weight="bold" fill="white" text-anchor="middle"
+	  dominant-baseline="central" opacity="0.9">PK-2</text>
+  </g>
+
+  <!-- PKE-Nefedov / PK-3 Plus (Pinky - Pink) with Shadow
+       This ghost represents the direct lineage between PKE-Nefedov and
+       PK-3 Plus.
+       PK-3 Plus was the major ISS mission following the Nefedov experiments.
+       The Shadow (PKE-Nefedov): Faint, blurry, and offset.
+       Symbolizes the predecessor that paved the way but is now
+       "in the past". -->
+  <g transform="translate(85, 423)">
+    <use href="#starShape" fill="#ffb8ff" opacity="0.2"
+	 filter="url(#ghostShadow)" />
+  </g>
+
+  <!-- The Original (PK-3 Plus): Sharp, bright, and primary.
+       Symbolizes the successful, long-running mission that followed.
+       The shadow effect visually metaphorizes the direct lineage.
+  -->
+  <g transform="translate(76, 409)" opacity="0.75">
+    <use href="#starShape" fill="#ffb8ff" opacity="0.5"
+	 filter="url(#ghostGlow)" />
+    <text x="0" y="-0.7em" font-family="Arial, sans-serif" font-size="3"
+	  font-weight="bold" fill="white" text-anchor="middle"
+	  dominant-baseline="central" opacity="0.9">PK-3 Plus</text>
+    <text x="0" y="1.6em" font-family="Arial, sans-serif" font-size="2.5"
+	  font-weight="bold" fill="white" text-anchor="middle"
+	  dominant-baseline="central" opacity="0.9">Nefedov</text>
+  </g>
+
+  <!-- PK-4 (Inky - Cyan / ESA)
+       Represents the PK-4 mission on the ISS, led by ESA.
+       Cyan (light blue) was chosen to reflect the European Space Agency's
+       contribution and the technical advancements of this specific module.
+  -->
+  <g transform="translate(58, 61)">
+    <use href="#starShape" fill="#00ffff" opacity="0.5"
+	 filter="url(#ghostGlow)" />
+    <text x="0" y="0.35em" font-family="Arial, sans-serif" font-size="3"
+	  font-weight="bold" fill="white" text-anchor="middle"
+	  dominant-baseline="central" opacity="0.9">PK-4</text>
+  </g>
+
+  <!-- 6. COMPACT Particles (The 5 Red Dots - Active Mission) -->
+  <!-- Five luminous red dots represent the dust particles illuminated by the
+       laser in the current COMPACT experiment.
+       Their slight vertical displacement ("wobble") simulates 3D motion in
+       microgravity.
+       The number '5' symbolizes COMPACT as the 5th major mission in the PK-series
+       (following PK-3 Plus & PK-4).
+       These are drawn last to appear on top of the plasma and laser. -->
+  <g filter="url(#particleGlow)">
+    <circle cx="342" cy="268" r="8" fill="#ff0000" />
+    <circle cx="292" cy="247" r="8" fill="#ff0000" />
+    <circle cx="262" cy="253" r="8" fill="#ff0000" />
+    <circle cx="212" cy="264" r="8" fill="#ff0000" />
+    <circle cx="162" cy="250" r="8" fill="#ff0000" />
+  </g>
+</svg>
