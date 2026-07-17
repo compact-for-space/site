@@ -15,9 +15,14 @@ consists of following main components:
 * Multiple particle dispensers
 * 2D imaging system
 * 3D imaging system
-* Plasma glow imaging
+* Plasma glow imaging and spectrometer
 * Laser particle manipulation system
 * UV particle manipulation system
+
+![Scheme of setup][fig_setup]
+
+[fig_setup]: /images/exa_top_annotations.jpg
+
 
 <a id="sec:zyflex"></a>
 
@@ -121,7 +126,7 @@ Both the 2D imaging system and the 3D imaging system as well as their illuminati
 
 <a id="sec:glow"></a>
 
-# Plasma glow imaging
+# Plasma glow imaging and spectrometer
 
 The plasma glow imaging system will capture the glow emission from the argon plasma.
 The most intense argon (double) spectral lines are near 750 nm, 763 nm, 810 nm and
@@ -132,6 +137,8 @@ nm are simultaneously recorded with a spatial resolution of about 400 x 250 pixe
 frame rate of about 50 fps. From this spectral, time and space resolved data information
 on the plasma properties can be derived, such as (relative) plasma density or
 temperature.
+
+In addtion, the light from the discharge is fed to a spectrometer with a wvelangth range of about 200 to 1000 nm with a resotluion of about 1nm.
 
 
 # Laser particle manipulation
