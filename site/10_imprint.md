@@ -12,7 +12,7 @@ SPDX-FileCopyrightText: 2026 COMPACT-for-space contributors
 SPDX-License-Identifier: CC-BY-SA-4.0
 -->
 
-# Imprint
+# Imprint, Terms and Conditions
 
 ## Publisher
 
@@ -26,20 +26,7 @@ Email: <a href="mailto:rektorin@uni-greifswald.de">rektorin@uni-greifswald.de</a
 VAT ID: DE 137 584 813
 </div>
 
-This is a non-commercial website dedicated to a scientific project focusing on
-the development of the complex plasma facility COMPACT.
-
-## Responsible for Content in accordance with § 55 Abs. 2 RStV
-
-<div>
-Daniel Mohr (on behalf of the COMPACT‑for‑space Project Team)<br>
-Institut für Physik<br>
-Felix-Hausdorff-Straße 6<br>
-DE-17489 Greifswald, Germany<br>
-Email: <a href="mailto:daniel.mohr@uni-greifswald.de">daniel.mohr@uni-greifswald.de</a>
-</div>
-
-## Supervisory Authority
+## Supervisory authority
 
 <div>
 Ministry of Science, Culture, Federal and European Affairs Mecklenburg-Vorpommern<br>
@@ -47,6 +34,102 @@ Schloßstraße 6-8<br>
 DE-19053 Schwerin, Germany<br>
 Tel.: +49 3834 588 0<br>
 Email: <a href="mailto:poststelle@em.mv-regierung.de">poststelle@em.mv-regierung.de</a>
+</div>
+
+## Webmaster
+
+Please send any technical queries and suggestions for using the website to:
+<a href="mailto:webmaster@uni-greifswald.de">webmaster@uni-greifswald.de</a>
+
+## 1. Scope of application
+
+This is a non-commercial website dedicated to a scientific project focusing on
+the development of the complex plasma facility COMPACT.
+
+## 2. Website contents
+
+The University of Greifswald assumes no liability for the up-to-datedness,
+correctness, completeness or quality of the information provided. Liability
+claims against the University, which are related to material or idealistic
+damages and were caused by the use or non-use of the provided information or
+by the use of incorrect and incomplete information, are generally excluded as
+long as there is no proof of negligence or gross negligence on behalf of the
+University.
+
+All of the information is subject to change and non-binding. The University
+explicitly reserves the right to change, complement or delete parts of the
+pages or all of the provided information without special notice, or to
+temporarily or definitively discontinue publication.
+
+Please send any comments and suggestions related to the content to:
+<a href="mailto:hochschulkommunikation@uni-greifswald.de">hochschulkommunikation@uni-greifswald.de</a>
+
+Please send any comments and suggestions related to technical aspects to: 
+<a href="mailto:webmaster@uni-greifswald.de">webmaster@uni-greifswald.de</a>
+
+## 3. Referrals and links
+
+Liability will only be assumed for direct or indirect referrals to external
+websites (‘Hyperlinks’) that lay beyond the boundaries of responsibility of
+the University, if the author knew about the content and it would have been
+technically possible and acceptable for him/her to avoid their use due to
+unlawful content.
+
+The University hereby expressly declares that no illegal content was evident
+on the linked pages at the time of linking. The University has no influence on
+the current or future composition, content or copyright of the linked pages.
+Therefore, the University hereby expressly renounces responsibility for the
+entire content of any of the linked pages that were changed after they had
+been linked. This stipulation applies to all referrals that link to our own
+internet pages and for entries made by third parties in guest books, discussion
+forums, link lists, mailing lists, and all other kinds of databases, which were
+made available by the University, and that allow for contributions from
+external users. Only the provider of the linked page is liable for illegal,
+incorrect or incomplete content, and, in particular, damages that occur from
+the use or non-use of such kinds of information, not those who merely refer to
+the respective publication via links.
+
+## 4. Copyright and trademark law
+
+The University endeavours:
+* to comply with the copyright protection of the graphics, photos, audio
+  recordings, video sequences and texts used in all of its publications;
+* to use graphics, photos, audio recordings, video sequences and texts it has
+  produced itself; or
+* to fall back on licence-free graphics, photos, audio recordings, video
+  sequences and texts.
+
+All of our internet pages that are subject to these terms and conditions and
+refer to brand names and trademarks that are possibly protected by third
+parties, are governed in full by the respective valid trademark laws and the
+ownership rights of the respective registered owner. Even if the website only
+names trademarks, it cannot be presumed that such labels are not legally
+protected.
+
+## 5. Legal effectiveness of this disclaimer
+
+This disclaimer is to be considered a component of the webpages. If sections or individual sentences of this text do not, no longer, or do not entirely correspond to the valid laws, the contents and validity of the remaining parts of the document remain unaffected.
+
+## Contact Information
+
+### Postal address for contacting the university:
+
+<div>
+Universität Greifswald (University of Greifswald)<br>
+DE-17489 Greifswald, Germany<br>
+Tel.: +49 3834 420 0
+</div>
+
+### Physical address:
+
+<div>
+Universität Greifswald (University of Greifswald)<br>
+Legally represented by the Rector, Prof. Dr. Katharina Riedel<br>
+Domstraße 11<br>
+DE-17489 Greifswald, Germany<br>
+Tel.: +49 3834 420 0<br>
+Fax: +49 3834 420 1248<br>
+Email: <a href="mailto:hochschulkommunikation@uni-greifswald.de">hochschulkommunikation@uni-greifswald.de</a>
 </div>
 
 ## Technical Implementation
@@ -57,16 +140,19 @@ The source code is built via CI/CD pipelines on GitLab.com; the published site
 does not embed any external third‑party services (e.g. trackers, analytics,
 or fonts).
 
-### Bug Reports & Technical Feedback
-
 Please create an issue in our
 [GitLab Repository](https://gitlab.com/compact-for-space/site/-/issues)
 for any technical problems or bugs.
 
-### Source Code Repository
-
-[gitlab.com/compact-for-space/site](https://gitlab.com/compact-for-space/site)
+Source Code Repository: [gitlab.com/compact-for-space/site](https://gitlab.com/compact-for-space/site)
 (stable link: [gitlab.com/projects/81882967](https://gitlab.com/projects/81882967))
+
+<div>
+Daniel Mohr (on behalf of the COMPACT‑for‑space Project Team)<br>
+Institut für Physik<br>
+Felix-Hausdorff-Straße 6<br>
+DE-17489 Greifswald, Germany<br>
+</div>
 
 ## Licensing Information
 
@@ -89,57 +175,3 @@ indicate if changes were made. You may do so in any reasonable manner, but not
 in any way that suggests the licensor endorses you or your use. If you remix,
 transform, or build upon the material, you must distribute your contributions
 under the **same license** as the original.
-
-## Liability for Content
-
-The contents of this website have been created with the greatest care. However,
-we cannot assume any liability for the up-to-dateness, correctness,
-completeness, or quality of the information provided.
-
-As a service provider, we are responsible for our own contents on these pages
-in accordance with general laws (DDG). However, as a service provider, we
-are not obligated to monitor transmitted or stored third-party information or
-to investigate circumstances that indicate illegal activity. Obligations to
-remove or block the use of information under general laws remain unaffected.
-However, liability in this regard is only possible from the time of knowledge
-of a specific legal violation. Upon notification of corresponding legal
-violations, we will remove this content immediately.
-
-## Liability for Links
-
-This website contains links to external third-party websites ("hyperlinks").
-We have no influence on the design, content, or copyright of these pages.
-Therefore, we expressly distance ourselves from all content of all linked pages
-that was changed after the link was set.
-
-This disclaimer applies to all links and references set within our own internet
-offering as well as to entries in guestbooks, discussion forums, link lists,
-and other databases accessible to external users. The respective provider of
-the page to which a link leads is solely liable for illegal, incorrect, or
-incomplete content, and in particular for damages arising from the use or
-non-use of such information.
-
-## Copyright
-
-The content and works created by the site operators on this website are subject
-to the licensing terms specified above (CC BY-SA 4.0, unless otherwise noted).
-
-Downloads and copies of this site are permitted only in accordance with the
-respective license terms.
-
-Insofar as the content on this site was not created by the operator or is
-subject to different licenses, the respective rights holders are cited. Should
-you nevertheless become aware of a copyright infringement, we ask you to notify
-us accordingly. Upon notification of legal violations, we will remove such
-content immediately.
-
-## Data Protection
-
-For information about the processing of personal data on this website, please
-refer to our [Privacy Policy]({{ "/privacy/" | relative_url }}).
-
-Data Protection Officer (DPO) of the University of Greifswald:
-<a href="mailto:datenschutz@uni-greifswald.de">datenschutz@uni-greifswald.de</a>
-
----
-Last updated: 2026-07-09
