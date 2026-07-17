@@ -36,6 +36,17 @@ Tel.: +49 3834 588 0<br>
 Email: <a href="mailto:poststelle@em.mv-regierung.de">poststelle@em.mv-regierung.de</a>
 </div>
 
+## Web editor-in-chief in accordance with § 18 MStV
+
+<div>
+Dr. Elisabeth Böker<br>
+University Communication, Press Officer<br>
+Domstraße 11, Entrance 2<br>
+17489 Greifswald<br>
+Tel: +49 3834 420 1150<br>
+Email: <a href="mailto:hochschulkommunikation@uni-greifswald.de">hochschulkommunikation@uni-greifswald.de</a>
+</div>
+
 ## Webmaster
 
 Please send any technical queries and suggestions for using the website to:
@@ -64,7 +75,7 @@ temporarily or definitively discontinue publication.
 Please send any comments and suggestions related to the content to:
 <a href="mailto:hochschulkommunikation@uni-greifswald.de">hochschulkommunikation@uni-greifswald.de</a>
 
-Please send any comments and suggestions related to technical aspects to: 
+Please send any comments and suggestions related to technical aspects to:
 <a href="mailto:webmaster@uni-greifswald.de">webmaster@uni-greifswald.de</a>
 
 ## 3. Referrals and links
@@ -175,3 +186,6 @@ indicate if changes were made. You may do so in any reasonable manner, but not
 in any way that suggests the licensor endorses you or your use. If you remix,
 transform, or build upon the material, you must distribute your contributions
 under the **same license** as the original.
+
+---
+Last updated: 2026-07-17
