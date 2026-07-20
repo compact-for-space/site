@@ -39,7 +39,7 @@
       {
         "person_or_org": {
           "type": "personal",
-          "given_name": "André",
+          "given_name": "Andre",
           "family_name": "Melzer",
           "identifiers": {
             "scheme": "orcid",
