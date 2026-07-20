@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "compact-for-space",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "description": "This repository contains the source code and build instructions for building the COMPACT for space website.",
     "resource_type": {
       "id": "software"
@@ -35,6 +35,23 @@
         "role": {
           "id": "contactperson"
         }
+      },
+      {
+        "person_or_org": {
+          "type": "personal",
+          "given_name": "André",
+          "family_name": "Melzer",
+          "identifiers": {
+            "scheme": "orcid",
+            "identifier": "0000-0001-9301-9357"
+          }
+        },
+        "affiliations": [
+          {
+            "id": "00r1edq15",
+            "name": "University of Greifswald"
+          }
+        ]
       }
     ],
     "keywords": [
