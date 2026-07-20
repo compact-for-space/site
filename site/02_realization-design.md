@@ -4,9 +4,9 @@ permalink: /realization-design/
 title: design
 tagline: Experimental setup for complex plasma research of COMPACT.
 description: |
-  The COMPACT experiment features a variable-distance Zyflex 
-  plasma chamber with 4-channel RF generator, 9 particle 
-  dispensers, 2D/3D imaging systems, and laser/UV 
+  The COMPACT experiment features a variable-distance Zyflex
+  plasma chamber with 4-channel RF generator, 9 particle
+  dispensers, 2D/3D imaging systems, and laser/UV
   particle manipulation capabilities.
 author: Andre Melzer
 ---
