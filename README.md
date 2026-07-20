@@ -4,6 +4,11 @@ stable link: https://gitlab.com/projects/81882967
 mirror: https://github.com/compact-for-space/site/
 doi: tbd
 ---
+<!--
+SPDX-FileCopyrightText: 2026 COMPACT-for-space contributors
+
+SPDX-License-Identifier: CC-BY-SA-4.0
+-->
 
 # compact-for-space
 
@@ -19,7 +24,10 @@ please follow the standard software development workflow:
 
 1. Fork the repository
 2. Branch for your changes (recommended)
-3. Submit a Merge Request
+3. Create your content
+4. Add yourself as contributor in `metadata.json` (in the root directory)
+5. Adapt version `.metadata.version` in `metadata.json`
+6. Submit a Merge Request
 
 ### Detailed Steps
 
@@ -45,10 +53,46 @@ manage multiple contributions.
 Alternatively, you may use a single developer branch in your fork
 if you wish to reduce the total number of branches.
 
-#### 3. create a merge request
+#### 3. implement changes
+
+Create your content or fix the bugs.
+
+#### 4. add yourself as contributor
+
+Important: If you are adding a new page or significant content,
+remember to add your name and details to [`metadata.json`](metadata.json)
+to be credited as a contributor.
+
+#### 5. Adapt version
+
+Adapt version `.metadata.version` in [`metadata.json`](metadata.json) following
+semantic versioning (cf. [semver.org](https://semver.org/))
+
+Important: Ensure that the version tag (`.metadata.version`) in `metadata.json`
+does not already exist in the repository.
+
+#### 6. create a merge request
 
 Once you have pushed your changes to your fork, open a merge request (MR)
-to the original repository. Please provide a clear description of the changes
-you have made.
+to the `contributions` branch of the original repository
+([`compact-for-space/site`](https://gitlab.com/compact-for-space/site)).
+
+Note: Please do not request a merge into the `main` branch directly.
+All contributions are first reviewed in the `contributions` branch.
+Once approved, the maintainers will merge your changes into `main`.
+
+This workflow ensures that all automated pipelines (including those with
+special permission requirements) run successfully in a controlled environment
+before the changes are integrated.
+
+Please provide a clear description of the changes you have made.
 
 ![create merge request](images/create-merge-request.png)
+
+## License
+
+Unless otherwise noted, all content is licensed under
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
+
+See [LICENSE.md](LICENSE.md) and the [LICENSES/](LICENSES/) directory
+for details.

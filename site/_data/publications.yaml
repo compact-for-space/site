@@ -1,9 +1,41 @@
+# SPDX-FileCopyrightText: 2026 COMPACT-for-space contributors
+#
+# SPDX-License-Identifier: CC0-1.0
+
 # _data/publications.yml
+# ============================================================================
+# PUBLICATIONS DATA
+# ============================================================================
+# This file is processed by the 'DoiCachePlugin'.
+# You can add publications in three different ways:
+#
+# OPTION A: Full Manual Entry
+# Fill in all fields if you want total control over the formatting.
+# Manual entries take priority over automatically fetched data.
+# - title: Title of the publication
+# - authors: List of authors (as a string)
+# - date: Publication date (as a string)
+# - doi: Digital Object Identifier
+#
+# OPTION B: Automated Entry (via DOI)
+# Provide only the DOI. The plugin will automatically fetch the title,
+# authors, and date from the Crossref/DOI database and store them
+# in 'doi_cache.yaml'.
+# - doi: The DOI of the publication
+#
+# OPTION C: Manual Link (No DOI)
+# For entries without a DOI (e.g., reports, preprints), use the 'url' field.
+# - title: Title
+# - authors: Authors
+# - date: Date (as a string)
+# - url: Link to the website or PDF
+# ============================================================================
 - title: "COMPACT — a new complex plasma facility for the ISS"
-  authors: "Knapek, C. A. and Couedel, L. and Dove, A. and Goree, J. and Konopka, U. and Melzer, A. and Ratynskaia, S. and Thoma, M. H. and Thomas, H. M."
-  year: 2022
+  authors: "C. A. Knapek, L. Couedel, A. Dove, J. Goree, U. Konopka, A. Melzer, S. Ratynskaia, M. H. Thoma, H. M. Thomas"
+  date: "2022"
   doi: 10.1088/1361-6587/ac9ff0
 - title: "Optical system for COMPACT"
-  authors: "Mohr, D. P., Hamkalo, M., Schütt, S., Knapek, C. A., Maier, D., & Melzer, A."
-  year: 2026
+  authors: "Daniel P. Mohr, Michal Hamkalo, Stefan Schütt, Christina A. Knapek, Daniel Maier, André Melzer"
+  date: "2026-03-24"
   doi: 10.5281/zenodo.19206132
+- doi: 10.5281/zenodo.20067128
