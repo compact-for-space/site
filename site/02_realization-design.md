@@ -87,7 +87,7 @@ sensor of about 9 Mpixel with digital resolution of the order of 40 µm/pixel. T
 
 The second camera ("detail camera") covers a field of view of 80 mm width and 80 mm
 height at 20 Mpixel with a higher digital resolution of about 18 µm/pixel at a maximum
-frame rate of 109 fps. Hence, the detail camera images the approximately the right half
+frame rate of 109 fps. Hence, the detail camera images approximately the right half
 of the discharge (in the direction of view of the cameras), shifted by 10 mm
 over the vertical discharge axis.
 
