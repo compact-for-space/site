@@ -29,7 +29,7 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 #github_username:  jekyll
 
 # default doi
-doi: tbd
+doi: 10.5281/zenodo.21478659
 
 # Build settings
 theme: minima

@@ -41,7 +41,7 @@ repos:
           - shellcheck-py
         args: [-shebang=#!/usr/bin/env bash, '.gitlab-ci.yml', 'build_pages', 'build_pages_for_release', 'release_job']
 #  - repo: https://github.com/igorshubovych/markdownlint-cli
-#    rev: v0.48.0
+#    rev: v0.49.1
 #    hooks:
 #      - id: markdownlint
   - repo: https://github.com/adrienverge/yamllint
