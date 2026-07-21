@@ -48,7 +48,7 @@ COMPACT is equipped with a 4-channel RF (radio-frequency) generator. This genera
 
 In addition, all channels can be switched on and off individually with a minimum duty cycle of 10 µs.
 
-The RF signals are coupled to the electrodes via a pi-type matching network. It is also planned that the electrode self-bias voltages can be modulated by low-frequency signals. There, arbitrary voltage waveforms with amplitudes up to 100 V and frequencies up to 100 Hz can be applied through the matching network to each of the electrodes.
+The RF signals are coupled to the electrodes via a pi-type matching network. It is also planned that the electrode self-bias voltages can be modulated by low-frequency signals. There, arbitrary voltage waveforms with amplitudes up to 100 V and frequencies up to 1000 Hz can be applied through the matching network to each of the electrodes.
 
 Mean values of the applied RF voltages as well as short sequences of highly-resolved
 voltage waveforms will be measured, recorded and stored.
