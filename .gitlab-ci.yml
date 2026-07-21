@@ -43,6 +43,8 @@ pre-commit:
     - pre-commit run --all-files --show-diff-on-failure
     - pre-commit autoupdate --jobs 0
     - git diff .pre-commit-config.yaml
+    - pre-commit autoupdate --jobs 0 --config .pre-commit-config.rubocop.yaml
+    - git diff .pre-commit-config.rubocop.yaml
     - jq < metadata.json
 
 check_tag_exists:
