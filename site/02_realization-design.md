@@ -68,7 +68,7 @@ according to the dust size to ensure that on the one hand sufficient amounts of 
 released into the plasma and on the other hand that particle agglomerates are
 suppressed.
 
-Nine dispersers with different particle sizes and particle geometries are foreseen.
+Nine dispensers with different particle sizes and particle geometries are foreseen.
 
 <a id="sec:2D"></a>
 
