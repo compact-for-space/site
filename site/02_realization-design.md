@@ -138,7 +138,7 @@ frame rate of about 50 fps. From this spectral, time and space resolved data inf
 on the plasma properties can be derived, such as (relative) plasma density or
 temperature.
 
-In addtion, the light from the discharge is fed to a spectrometer with a wvelangth range of about 200 to 1000 nm with a resotluion of about 1nm.
+In addition, the light from the discharge is fed to a spectrometer with a wavelength range of about 200 to 1000 nm with a resolution of about 1nm.
 
 ## Laser particle manipulation
 
