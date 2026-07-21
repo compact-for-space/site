@@ -108,7 +108,7 @@ Here, a stereoscopic system is envisaged where each camera has a sensor with 65 
 resolution of about 9 µm/pixel. The four cameras have a common usable field of view of
 about 85 mm width and 45 mm height in the lower left region of the discharge (in
 viewing direction of the cameras). The frame rate of the cameras at full resolution is
-about 70 fps. However, the recorded data rate will be restricted to about 900 Mpixel per second for
+about 70 fps. However, the recorded data rate will be restricted to about 900 MByte per second for
 each of the cameras. Thus, for each of the cameras a smaller region of interest (ROI) will
 be chosen that covers the same reduced field of view. The ROIs can be freely selected
 within the full usable field of view. Also size and frame rate of the ROI can be adapted to
