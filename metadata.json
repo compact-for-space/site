@@ -45,9 +45,9 @@
             "scheme": "orcid",
             "identifier": "0000-0001-9301-9357"
           },
-        "role": {
-          "id": "contactperson"
-        }
+          "role": {
+            "id": "contactperson"
+          }
         },
         "affiliations": [
           {
