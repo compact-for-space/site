@@ -5,19 +5,20 @@ layout: page
 
 COMPACT (**Com**plex **P**l**a**sma Fa**c**ili**t**y) is a multi-user facility for the investigation of complex (dusty) plasmas under microgravity conditions aboard a space station.
 
+<img src="../images/compact_locker_progress_meeting3B_anno.png" width="600">
+
+[COMPACT](https://doi.org/10.1088/1361-6587/ac9ff0) will feature large, extended three-dimensional dust clouds under nearly stress-free conditions and will be equipped with a whole suite of [diagnostic and manipulation devices][sec:documentation].
+
+[Scientific questions][sec:science_mission] of this project include:
+* Statistical physics of many-body systems
+* Active and non-spherical particles
+* Phase transitions and glass phases
+* Nonlinear dynamics and turbulence
+* Planetary physics
+* Particles as diagnostics in plasmas 
+
+COMPACT is an international project funded by the German Space Agency DLR with support from ESA, NASA and NSF.
 
 
-
-[COMPACT](https://doi.org/10.1088/1361-6587/ac9ff0) will feature large, extended three-dimensional dust clouds under nearly stress-free conditions and will be equipped with a whole suite of diagnostic and manipulation devices.
-
-
-
-
-
-
-The future complex plasma facility
-
-will allow the investigation of  complex plasmas
-under . COMPACT is a project
-with international scientific contributions, supported by space agencies
-(DLR, NASA, ESA) and NSF.
+[sec:documentation]:02_realization-design.md
+[sec:science_mission]: 01_science-mission.md
