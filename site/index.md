@@ -17,7 +17,26 @@ COMPACT (**Com**plex **P**l**a**sma Fa**c**ili**t**y) is a multi-user facility f
 * Planetary physics
 * Particles as diagnostics in plasmas 
 
+
+Science Definition Team :
+
+| | | 
+|---|---|
+ Uwe Konopka | Auburn University, USA 
+Lenaic Couedel | University of Saskatchewan, Canada
+ Adrian Dove | University of Central Florida, USA 
+John Goree | The University of Iowa, USA
+Christina Knapek| University Greifswald, Germany
+Michael Kretschmer | Justus Liebig University, Germany
+Andre Melzer | University Greifswald, Germany
+Markus Thoma | Justus Liebig University, Germany
+Hubertus Thomas | Institute for Frontier Materials on Earth and in Space, Germany
+Svetlana Ratynskaya | KTH Royal Institute of Technology Stockholm, Sweden
+Jeph Wang | Los Alamos National Laboratory, USA
+Florian Zaussinger | University of Applied Sciences Mittweida, Germany
+
 COMPACT is an international project funded by the German Space Agency DLR with support from ESA, NASA and NSF.
+
 
 
 [sec:documentation]:02_realization-design.md
