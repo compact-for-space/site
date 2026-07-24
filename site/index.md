@@ -1,11 +1,15 @@
 ---
 layout: page
+permalink: /
+tagline: Complex Plasma Facility for Microgravity Research
+description: COMPACT -- Multi-user facility for investigating complex (dusty) plasmas under microgravity conditions aboard a space station
+author: COMPACT-for-space contributors, Andre Melzer
 ---
 # COMPACT
 
 COMPACT (**Com**plex **P**l**a**sma Fa**c**ili**t**y) is a multi-user facility for the investigation of complex (dusty) plasmas under microgravity conditions aboard a space station.
 
-<img src="../images/compact_locker_progress_meeting3B_anno.png" width="600">
+<img src="{{ 'assets/images/compact_locker_progress_meeting3B_anno.png' | relative_url }}" width="600">
 
 [COMPACT](https://doi.org/10.1088/1361-6587/ac9ff0) will feature large, extended three-dimensional dust clouds under nearly stress-free conditions and will be equipped with a whole suite of [diagnostic and manipulation devices][sec:documentation].
 
@@ -15,16 +19,15 @@ COMPACT (**Com**plex **P**l**a**sma Fa**c**ili**t**y) is a multi-user facility f
 * Phase transitions and glass phases
 * Nonlinear dynamics and turbulence
 * Planetary physics
-* Particles as diagnostics in plasmas 
+* Particles as diagnostics in plasmas
 
+Science Definition Team:
 
-Science Definition Team :
-
-| | | 
+| | |
 |---|---|
- Uwe Konopka | Auburn University, USA 
+ Uwe Konopka | Auburn University, USA
 Lenaic Couedel | University of Saskatchewan, Canada
- Adrian Dove | University of Central Florida, USA 
+ Adrian Dove | University of Central Florida, USA
 John Goree | The University of Iowa, USA
 Christina Knapek| University Greifswald, Germany
 Michael Kretschmer | Justus Liebig University, Germany
@@ -37,7 +40,5 @@ Florian Zaussinger | University of Applied Sciences Mittweida, Germany
 
 COMPACT is an international project funded by the German Space Agency DLR with support from ESA, NASA and NSF.
 
-
-
-[sec:documentation]:02_realization-design.md
-[sec:science_mission]: 01_science-mission.md
+[sec:documentation]:/realization-design/
+[sec:science_mission]:/science-mission/
