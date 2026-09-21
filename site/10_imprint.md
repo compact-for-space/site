@@ -39,12 +39,12 @@ Email: <a href="mailto:poststelle@em.mv-regierung.de">poststelle@em.mv-regierung
 ## Web editor-in-chief in accordance with § 18 MStV
 
 <div>
-Dr. Elisabeth Böker<br>
-University Communication, Press Officer<br>
-Domstraße 11, Entrance 2<br>
+André Melzer<br>
+Universität Greifswald, Institut für Physik<br>
+Felix-Hausdorff-Str. 6<br>
 17489 Greifswald<br>
-Tel: +49 3834 420 1150<br>
-Email: <a href="mailto:hochschulkommunikation@uni-greifswald.de">hochschulkommunikation@uni-greifswald.de</a>
+Tel: +49 3834 420 4790<br>
+Email: <a href="mailto:compact-mission@uni-greifswald.de">compact-mission@uni-greifswald.de</a>
 </div>
 
 ## Webmaster
@@ -73,10 +73,10 @@ pages or all of the provided information without special notice, or to
 temporarily or definitively discontinue publication.
 
 Please send any comments and suggestions related to the content to:
-<a href="mailto:hochschulkommunikation@uni-greifswald.de">hochschulkommunikation@uni-greifswald.de</a>
+<a href="mailto:compact-mission@uni-greifswald.de">compact-mission@uni-greifswald.de</a>
 
 Please send any comments and suggestions related to technical aspects to:
-<a href="mailto:webmaster@uni-greifswald.de">webmaster@uni-greifswald.de</a>
+<a href="mailto:compact-mission@uni-greifswald.de">compact-mission@uni-greifswald.de</a>
 
 ## 3. Referrals and links
 
