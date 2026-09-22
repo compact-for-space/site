@@ -1,0 +1,24 @@
+---
+permalink: /publications.json
+layout: null
+---
+{
+  "title": "COMPACT Publications",
+  "project": "COMPACT (Complex Plasma Facility)",
+  "publications": [
+    {% for pub in site.data.publications %}
+    {% assign doi_meta = site.data.doi_cache[pub.doi] %}
+    {% assign pub_title = pub.title | default: doi_meta.title %}
+    {% assign pub_authors = pub.authors | default: doi_meta.author %}
+    {% assign pub_date = pub.date | default: doi_meta.date %}
+    {
+      "title": {{ pub_title | jsonify }},
+      "authors": {{ pub_authors | jsonify }},
+      "date": {{ pub_date | jsonify }},
+      "doi": {{ pub.doi | jsonify }},
+      "doi_url": {% if pub.doi %}"https://doi.org/{{ pub.doi }}"{% else %}null{% endif %},
+      "url": {{ pub.url | jsonify }}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
