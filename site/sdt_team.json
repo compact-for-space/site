@@ -1,0 +1,22 @@
+---
+permalink: /sdt_team.json
+layout: null
+---
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "COMPACT Science Definition Team",
+  "member": [
+    {% for m in site.data.sdt_team %}{
+      "@type": "Person",
+      "name": {{ m.name | jsonify }},
+      "affiliation": {
+        "@type": "Organization",
+        "name": {{ m.affiliation | jsonify }}{% if m.ror %},
+        "sameAs": "https://ror.org/{{ m.ror }}"{% endif %}
+      },
+      {% if m.orcid %}"sameAs": "https://orcid.org/{{ m.orcid }}"{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}

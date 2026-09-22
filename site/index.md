@@ -23,20 +23,31 @@ COMPACT (**Com**plex **P**l**a**sma Fa**c**ili**t**y) is a multi-user facility f
 
 Science Definition Team:
 
-| | |
-|---|---|
-Uwe Konopka | Auburn University, USA | orcid: [0000-0003-2437-0965](https://orcid.org/0000-0003-2437-0965)
-Lenaic Couedel | University of Saskatchewan, Canada | orcid: [0000-0003-0749-9273](https://orcid.org/0000-0003-0749-9273)
-Adrienne Dove | University of Central Florida, USA | orcid: [0000-0001-5545-4454](https://orcid.org/0000-0001-5545-4454)
-John Goree | The University of Iowa, USA | orcid: [0000-0002-3988-0848](https://orcid.org/0000-0002-3988-0848)
-Christina Knapek| University of Greifswald, Germany | orcid: [0000-0001-7105-627X](https://orcid.org/0000-0001-7105-627X)
-Michael Kretschmer | Justus Liebig University, Germany | orcid: [0000-0002-0261-7309](https://orcid.org/0000-0002-0261-7309)
-Andre Melzer | University of Greifswald, Germany | orcid: [0000-0001-9301-9357](https://orcid.org/0000-0001-9301-9357)
-Markus Thoma | Justus Liebig University, Germany | orcid: [0000-0002-8816-9120](https://orcid.org/0000-0002-8816-9120)
-Hubertus Thomas | DLR, Institute for Frontier Materials on Earth and in Space, Germany | orcid: [0000-0001-8358-2023](https://orcid.org/0000-0001-8358-2023)
-Svetlana Ratynskaia | KTH Royal Institute of Technology Stockholm, Sweden | orcid: [0000-0002-6712-3625](https://orcid.org/0000-0002-6712-3625)
-Zhehui Wang | Los Alamos National Laboratory, USA | orcid: [000-0001-7826-4063](https://orcid.org/0000-0001-7826-4063)
-Florian Zaussinger | University of Applied Sciences Mittweida, Germany | orcid: [0000-0003-0476-4537](https://orcid.org/0000-0003-0476-4537)
+| Name | Affiliation | ORCID | ROR |
+|---|---|---|
+{% for m in site.data.sdt_team %}| {{ m.name }} | {{ m.affiliation }} | [{{ m.orcid }}](https://orcid.org/{{ m.orcid }}) | {% if m.ror %}[{{ m.ror }}](https://ror.org/{{ m.ror | replace: 'https://ror.org/', '' }}){% else %}—{% endif %} |
+{% endfor %}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "COMPACT Science Definition Team",
+  "member": [
+    {% for m in site.data.sdt_team %}{
+      "@type": "Person",
+      "name": {{ m.name | jsonify }},
+      "affiliation": {
+        "@type": "Organization",
+        "name": {{ m.affiliation | jsonify }}{% if m.ror %},
+        "sameAs": "https://ror.org/{{ m.ror }}"{% endif %}
+      },
+      {% if m.orcid %}"sameAs": "https://orcid.org/{{ m.orcid }}"{% endif %}
+    }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+}
+</script>
 
 COMPACT is an international project funded by the German Space Agency DLR with support from ESA, NASA and NSF.
 
