@@ -21,33 +21,12 @@ COMPACT (**Com**plex **P**l**a**sma Fa**c**ili**t**y) is a multi-user facility f
 * Planetary physics
 * Particles as diagnostics in plasmas
 
-Science Definition Team:
+Science Definition Team (<a href="{{ 'sdt_team.json' | relative_url }}" download>list as json</a>):
 
 | Name | Affiliation | ORCID | ROR |
 |---|---|---|
 {% for m in site.data.sdt_team %}| {{ m.name }} | {{ m.affiliation }} | [{{ m.orcid }}](https://orcid.org/{{ m.orcid }}) | {% if m.ror %}[{{ m.ror }}](https://ror.org/{{ m.ror | replace: 'https://ror.org/', '' }}){% else %}—{% endif %} |
 {% endfor %}
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "COMPACT Science Definition Team",
-  "member": [
-    {% for m in site.data.sdt_team %}{
-      "@type": "Person",
-      "name": {{ m.name | jsonify }},
-      "affiliation": {
-        "@type": "Organization",
-        "name": {{ m.affiliation | jsonify }}{% if m.ror %},
-        "sameAs": "https://ror.org/{{ m.ror }}"{% endif %}
-      },
-      {% if m.orcid %}"sameAs": "https://orcid.org/{{ m.orcid }}"{% endif %}
-    }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-  ]
-}
-</script>
 
 COMPACT is an international project funded by the German Space Agency DLR with support from ESA, NASA and NSF.
 
