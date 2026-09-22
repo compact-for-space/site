@@ -25,18 +25,18 @@ Science Definition Team:
 
 | | |
 |---|---|
- Uwe Konopka | Auburn University, USA
-Lenaic Couedel | University of Saskatchewan, Canada
- Adrian Dove | University of Central Florida, USA
-John Goree | The University of Iowa, USA
-Christina Knapek| University Greifswald, Germany
-Michael Kretschmer | Justus Liebig University, Germany
-Andre Melzer | University Greifswald, Germany
-Markus Thoma | Justus Liebig University, Germany
-Hubertus Thomas | Institute for Frontier Materials on Earth and in Space, Germany
-Svetlana Ratynskaya | KTH Royal Institute of Technology Stockholm, Sweden
-Jeph Wang | Los Alamos National Laboratory, USA
-Florian Zaussinger | University of Applied Sciences Mittweida, Germany
+Uwe Konopka | Auburn University, USA | orcid: [0000-0003-2437-0965](https://orcid.org/0000-0003-2437-0965)
+Lenaic Couedel | University of Saskatchewan, Canada | orcid: [0000-0003-0749-9273](https://orcid.org/0000-0003-0749-9273)
+Adrienne Dove | University of Central Florida, USA | orcid: [0000-0001-5545-4454](https://orcid.org/0000-0001-5545-4454)
+John Goree | The University of Iowa, USA | orcid: [0000-0002-3988-0848](https://orcid.org/0000-0002-3988-0848)
+Christina Knapek| University of Greifswald, Germany | orcid: [0000-0001-7105-627X](https://orcid.org/0000-0001-7105-627X)
+Michael Kretschmer | Justus Liebig University, Germany | orcid: [0000-0002-0261-7309](https://orcid.org/0000-0002-0261-7309)
+Andre Melzer | University of Greifswald, Germany | orcid: [0000-0001-9301-9357](https://orcid.org/0000-0001-9301-9357)
+Markus Thoma | Justus Liebig University, Germany | orcid: [0000-0002-8816-9120](https://orcid.org/0000-0002-8816-9120)
+Hubertus Thomas | DLR, Institute for Frontier Materials on Earth and in Space, Germany | orcid: [0000-0001-8358-2023](https://orcid.org/0000-0001-8358-2023)
+Svetlana Ratynskaia | KTH Royal Institute of Technology Stockholm, Sweden | orcid: [0000-0002-6712-3625](https://orcid.org/0000-0002-6712-3625)
+Zhehui Wang | Los Alamos National Laboratory, USA | orcid: [000-0001-7826-4063](https://orcid.org/0000-0001-7826-4063)
+Florian Zaussinger | University of Applied Sciences Mittweida, Germany | orcid: [0000-0003-0476-4537](https://orcid.org/0000-0003-0476-4537)
 
 COMPACT is an international project funded by the German Space Agency DLR with support from ESA, NASA and NSF.
 
