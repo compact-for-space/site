@@ -28,7 +28,7 @@ This website serves as a platform to present the research and progress of the CO
 
 {% assign final_doi = site.env.DOI | default: site.doi %}
 
-* URL: tbd
+* URL: [compact-mission.space](https://compact-mission.space/)
 * Repository: The source code and build instructions for this website can be found on [gitlab.com/compact-for-space/site/](https://gitlab.com/compact-for-space/site/) (stable link: [gitlab.com/projects/81882967](https://gitlab.com/projects/81882967)).
 * Mirror: [github.com/compact-for-space/site/](https://github.com/compact-for-space/site/)
 * DOI: <a href="https://doi.org/{{ final_doi }}" target="_blank">{{ final_doi }}</a>
