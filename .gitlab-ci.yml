@@ -370,9 +370,15 @@ pages_after_release:
   needs:
     - job: build_pages_for_release
       artifacts: true
+  script:
+    - |
+      echo "SOURCE_JOB_ID=$CI_JOB_ID" | tee variables.env
+    - find public/
   artifacts:
     paths:
       - public/
+    reports:
+      dotenv: variables.env
 
 deploy_after_release_to_webspace:
   stage: deploy
@@ -382,6 +388,12 @@ deploy_after_release_to_webspace:
     - if: $CI_PIPELINE_SOURCE == "pipeline" && $STEP == "2"
   needs:
     - job: pages_after_release
+      artifacts: true
+  variables:
+    SOURCE_JOB_ID: $SOURCE_JOB_ID
   trigger:
     project: daniel_mohr/deploy_compact-for-space_to_webspace
     strategy: depend
+    forward:
+      yaml_variables: true
+      pipeline_variables: false
