@@ -26,7 +26,7 @@ consists of following main components:
 * [Laser particle manipulation](#laser-manipulation)
 * [UV particle manipulation](#sec:uv)
 
-![Scheme of setup]({{ 'assets/images/exa_top_annotations.jpg' | relative_url }})
+![Scheme of setup]({{ 'assets/images/exa_top_annotations_sources.png' | relative_url }})
 
 <a id="sec:zyflex"></a>
 

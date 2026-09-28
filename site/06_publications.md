@@ -7,6 +7,8 @@ author: Daniel Mohr
 license: CC0
 ---
 
+<a href="{{ 'publications.json' | relative_url }}" download>publication list as json</a>
+
 {% assign all_entries = "" %}
 {% for pub in site.data.publications %}
   {% assign doi_meta = site.data.doi_cache[pub.doi] %}
