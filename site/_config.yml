@@ -24,7 +24,7 @@ author: COMPACT-for-space contributors
 description: >- # this means to ignore newlines until "baseurl:"
   The future complex plasma facility COMPACT presents research.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://compact-mission.space/" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 #github_username:  jekyll
 
@@ -68,3 +68,5 @@ minima:
     - 06_publications.md
     - 07_funding.md
     - 08_about.md
+    - 09_privacy.md
+    - 10_imprint.md

@@ -26,10 +26,10 @@ a space station.
 
 This website serves as a platform to present the research and progress of the COMPACT facility.
 
-* URL: tbd
+* URL: [compact-mission.space](https://compact-mission.space/)
 * Repository: The source code and build instructions for this website can be found on [gitlab.com/compact-for-space/site/](https://gitlab.com/compact-for-space/site/) (stable link: [gitlab.com/projects/81882967](https://gitlab.com/projects/81882967)).
 * Mirror: [github.com/compact-for-space/site/](https://github.com/compact-for-space/site/)
-* DOI: tbd
+* DOI: [10.5281/zenodo.21478659](https://doi.org/10.5281/zenodo.21478659)
 
 ## Contribution
 

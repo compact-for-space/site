@@ -2,7 +2,8 @@
 home: https://gitlab.com/compact-for-space/site/
 stable link: https://gitlab.com/projects/81882967
 mirror: https://github.com/compact-for-space/site/
-doi: tbd
+doi: https://doi.org/10.5281/zenodo.21478659
+website: https://compact-mission.space/
 ---
 <!--
 SPDX-FileCopyrightText: 2026 COMPACT-for-space contributors
@@ -13,7 +14,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 # compact-for-space
 
 This repository contains the source code and build instructions for
-building the COMPACT website.
+building the [COMPACT website](https://compact-mission.space/).
 
 ## Contribution
 
