@@ -177,7 +177,8 @@ build_pages:
       "06_publications:publications"
       "07_funding:funding"
       "08_about:about")
-    - echo "127.0.0.1 site-2ef4a3.gitlab.io" >> /etc/hosts
+    # - echo "127.0.0.1 site-2ef4a3.gitlab.io" >> /etc/hosts
+    - echo "127.0.0.1 compact-mission.space" >> /etc/hosts
     - set -x
     - |
       for item in "${FILES[@]}"; do
@@ -186,20 +187,22 @@ build_pages:
       echo "idx: $idx"
       echo "path: $path"
       if [ "$path" = "index" ]; then
-      # url="http://localhost:4000/"
-      url="http://site-2ef4a3.gitlab.io:4000/"
+        # url="http://localhost:4000/"
+        # url="http://site-2ef4a3.gitlab.io:4000/"
+        url="http://compact-mission.space:4000/"
       else
-      # url="http://localhost:4000/${path}"
-      url="http://site-2ef4a3.gitlab.io:4000/${path}"
+        # url="http://localhost:4000/${path}"
+        # url="http://site-2ef4a3.gitlab.io:4000/${path}"
+        url="http://compact-mission.space:4000/${path}"
       fi
       chromium --no-sandbox --disable-dev-shm-usage --headless --disable-gpu --page=A4 --print-to-pdf="$(pwd)"/pdfs/"${idx}".pdf "$url"
       if [ "$path" = "index" ]; then
       chromium --no-sandbox --disable-dev-shm-usage --headless --disable-gpu --screenshot="$(pwd)"/pdfs/"${idx}".png --window-size=1024,768 "$url"
       fi
       done
-    - img2pdf --output pdfs/00_cover.pdf -S Letter pdfs/00_index.png
+    - img2pdf --output pdfs/00_cover.pdf -S A4 pdfs/00_index.png
     - pdfunite pdfs/*.pdf "$BASE_NAME"."$TAG".pdf
-    - rm -r pdfs
+    - rm -rf pdfs
     - pkill -f "jekyll serve"
     - find public/
   artifacts:
@@ -355,6 +358,9 @@ pages:
   extends: .display_env
   script:
     - find public/
+  artifacts:
+    paths:
+      - public/
 
 pages_after_release:
   # triggered by: https://gitlab.com/daniel_mohr/compact-for-space-site
@@ -364,3 +370,6 @@ pages_after_release:
   needs:
     - job: build_pages_for_release
       artifacts: true
+  artifacts:
+    paths:
+      - public/
