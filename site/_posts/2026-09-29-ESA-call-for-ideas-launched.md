@@ -7,7 +7,7 @@ categories: press
 
 ESA and DLR have launched a joint call for ideas for the utilization of COMPACT:
 
-[Joint ESA/DLR Call : Join the Science Definition Team of the COMPACT Plasma Experiment]{https://ideas.esa.int/core/servlet/hype/IMT?documentTableId=8284555823688397007&userAction=Browse&templateName=&documentId=b3450f8c658cea962f2161ab762ab7fa}
+[Joint ESA/DLR Call: Join the Science Definition Team of the COMPACT Plasma Experiment](https://ideas.esa.int/core/servlet/hype/IMT?documentTableId=8284555823688397007&userAction=Browse&templateName=&documentId=b3450f8c658cea962f2161ab762ab7fa)
 
 Have a look and submit your ideas!
 
