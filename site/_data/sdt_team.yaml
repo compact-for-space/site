@@ -24,19 +24,24 @@
 - name: "Uwe Konopka"
   affiliation: "Auburn University, USA"
   orcid: "0000-0003-2437-0965"
+  role: SDT chair
 - name: "Lenaic Couedel"
   affiliation: "University of Saskatchewan, Canada"
   orcid: "0000-0003-0749-9273"
+  role: SDT
 - name: "Adrienne Dove"
   affiliation: "University of Central Florida, USA"
   orcid: "0000-0001-5545-4454"
+  role: SDT
 - name: "John Goree"
   affiliation: "The University of Iowa, USA"
   orcid: "0000-0002-3988-0848"
+  role: SDT
 - name: "Christina Knapek"
   affiliation: "University of Greifswald, Germany"
   orcid: "0000-0001-7105-627X"
   ror: "00r1edq15"
+  role: SDT
 - name: "Michael Kretschmer"
   affiliation: "Justus Liebig University, Germany"
   orcid: "0000-0002-0261-7309"
@@ -44,18 +49,29 @@
   affiliation: "University of Greifswald, Germany"
   orcid: "0000-0001-9301-9357"
   ror: "00r1edq15"
+  role: SDT
+- name: "Daniel Mohr"
+  affiliation: "University of Greifswald, Germany"
+  orcid: "0000-0002-9382-6586"
+  ror: "00r1edq15"
 - name: "Markus Thoma"
   affiliation: "Justus Liebig University, Germany"
   orcid: "0000-0002-8816-9120"
+  role: SDT
 - name: "Hubertus Thomas"
   affiliation: "DLR, Institute for Frontier Materials on Earth and in Space, Germany"
   orcid: "0000-0001-8358-2023"
+  role: SDT
 - name: "Svetlana Ratynskaia"
   affiliation: "KTH Royal Institute of Technology Stockholm, Sweden"
   orcid: "0000-0002-6712-3625"
+  role: SDT
 - name: "Zhehui Wang"
   affiliation: "Los Alamos National Laboratory, USA"
   orcid: "0000-0001-7826-4063"
+  role: SDT
 - name: "Florian Zaussinger"
   affiliation: "University of Applied Sciences Mittweida, Germany"
   orcid: "0000-0003-0476-4537"
+  role: SDT
+
