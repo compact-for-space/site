@@ -56,6 +56,26 @@
           "id": "contactperson"
         }
       }
+      {
+        "person_or_org": {
+          "type": "personal",
+          "given_name": "Christina",
+          "family_name": "Knapek",
+          "identifiers": {
+            "scheme": "orcid",
+            "identifier": "0000-0001-7105-627X"
+          }
+        },
+        "affiliations": [
+          {
+            "id": "00r1edq15",
+            "name": "University of Greifswald"
+          }
+        ],
+        "role": {
+          "id": "contactperson"
+        }
+      }
     ],
     "keywords": [
       "complex plasma",
