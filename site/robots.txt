@@ -5,4 +5,4 @@
 
 User-agent: *
 Allow: /
-Sitemap: /sitemap.xml
+Sitemap: https://compact-mission.space/sitemap.xml

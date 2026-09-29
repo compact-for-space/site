@@ -2,14 +2,15 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 # ============================================================================
-# SCIENCE DEFINITION TEAM (SDT) DATA
+# SCIENCE CORE TEAM AND SCIENCE DEFINITION TEAM (SDT) DATA
 # ============================================================================
 #
-# Single source of truth for the "Science Definition Team" table on the
-# COMPACT home page (site/index.md).
+# Single source of truth for the Science core team and the
+# "Science Definition Team" table on the # COMPACT home
+# page (site/index.md).
 #
 # The table is rendered by Jekyll from this file, and the same data is also
-# published as a machine-readable JSON file (sdt_team.json) for readers,
+# published as a machine-readable JSON file (science_team.json) for readers,
 # search engines and downstream tools.
 #
 # Each entry:
@@ -17,6 +18,11 @@
 #   affiliation: Institution / affiliation (e.g. "University of Greifswald")
 #   orcid:       ORCID iD (digits + X). Omit the line if a member has none.
 #   ror:         ROR organization ID (e.g. "00r1edq15"). Omit if none.
+#   role:        Membership/role in the Science Definition Team.
+#                Values: "SDT" (member) or "SDT chair". Omit for core-team
+#                members who are not part of the SDT.
+#                Published in science_team.json as a schema.org "memberOf"
+#                reference to the SDT (with "Chair" as roleName).
 #
 # To add a member: copy one block below. Order in the file is the display
 # order on the site (currently alphabetical by surname).
@@ -24,19 +30,24 @@
 - name: "Uwe Konopka"
   affiliation: "Auburn University, USA"
   orcid: "0000-0003-2437-0965"
+  role: SDT chair
 - name: "Lenaic Couedel"
   affiliation: "University of Saskatchewan, Canada"
   orcid: "0000-0003-0749-9273"
+  role: SDT
 - name: "Adrienne Dove"
   affiliation: "University of Central Florida, USA"
   orcid: "0000-0001-5545-4454"
+  role: SDT
 - name: "John Goree"
   affiliation: "The University of Iowa, USA"
   orcid: "0000-0002-3988-0848"
+  role: SDT
 - name: "Christina Knapek"
   affiliation: "University of Greifswald, Germany"
   orcid: "0000-0001-7105-627X"
   ror: "00r1edq15"
+  role: SDT
 - name: "Michael Kretschmer"
   affiliation: "Justus Liebig University, Germany"
   orcid: "0000-0002-0261-7309"
@@ -44,18 +55,28 @@
   affiliation: "University of Greifswald, Germany"
   orcid: "0000-0001-9301-9357"
   ror: "00r1edq15"
+  role: SDT
+- name: "Daniel Mohr"
+  affiliation: "University of Greifswald, Germany"
+  orcid: "0000-0002-9382-6586"
+  ror: "00r1edq15"
 - name: "Markus Thoma"
   affiliation: "Justus Liebig University, Germany"
   orcid: "0000-0002-8816-9120"
+  role: SDT
 - name: "Hubertus Thomas"
   affiliation: "DLR, Institute for Frontier Materials on Earth and in Space, Germany"
   orcid: "0000-0001-8358-2023"
+  role: SDT
 - name: "Svetlana Ratynskaia"
   affiliation: "KTH Royal Institute of Technology Stockholm, Sweden"
   orcid: "0000-0002-6712-3625"
+  role: SDT
 - name: "Zhehui Wang"
   affiliation: "Los Alamos National Laboratory, USA"
   orcid: "0000-0001-7826-4063"
+  role: SDT
 - name: "Florian Zaussinger"
   affiliation: "University of Applied Sciences Mittweida, Germany"
   orcid: "0000-0003-0476-4537"
+  role: SDT
