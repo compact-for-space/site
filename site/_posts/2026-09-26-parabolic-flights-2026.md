@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Parabolic flight campaign 2026"
-date:   2026-09-29
+date:   2026-09-26
 author: Christina Knapek
 categories: science
 ---
