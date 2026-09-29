@@ -18,6 +18,11 @@
 #   affiliation: Institution / affiliation (e.g. "University of Greifswald")
 #   orcid:       ORCID iD (digits + X). Omit the line if a member has none.
 #   ror:         ROR organization ID (e.g. "00r1edq15"). Omit if none.
+#   role:        Membership/role in the Science Definition Team.
+#                Values: "SDT" (member) or "SDT chair". Omit for core-team
+#                members who are not part of the SDT.
+#                Published in science_team.json as a schema.org "memberOf"
+#                reference to the SDT (with "Chair" as roleName).
 #
 # To add a member: copy one block below. Order in the file is the display
 # order on the site (currently alphabetical by surname).
