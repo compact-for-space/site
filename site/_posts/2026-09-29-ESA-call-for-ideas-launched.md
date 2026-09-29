@@ -3,7 +3,7 @@ layout: post
 title:  "ESA Call for ideas launched"
 date:   2026-09-29
 author: Christina Knapek
-categories: [science, announcement]
+categories: science
 ---
 
 ESA and DLR have launched a joint call for ideas for the utilization of COMPACT:
