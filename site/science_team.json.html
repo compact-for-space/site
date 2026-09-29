@@ -1,13 +1,13 @@
 ---
-permalink: /sdt_team.json
+permalink: /science_team.json
 layout: null
 ---
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "COMPACT Science Definition Team",
+  "name": "COMPACT Science Core Team",
   "member": [
-    {% for m in site.data.sdt_team %}{
+    {% for m in site.data.science_team %}{
       "@type": "Person",
       "name": {{ m.name | jsonify }},
       "affiliation": {

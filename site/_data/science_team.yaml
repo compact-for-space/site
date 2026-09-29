@@ -2,14 +2,15 @@
 #
 # SPDX-License-Identifier: CC0-1.0
 # ============================================================================
-# SCIENCE DEFINITION TEAM (SDT) DATA
+# SCIENCE CORE TEAM AND SCIENCE DEFINITION TEAM (SDT) DATA
 # ============================================================================
 #
-# Single source of truth for the "Science Definition Team" table on the
-# COMPACT home page (site/index.md).
+# Single source of truth for the Science core team and the
+# "Science Definition Team" table on the # COMPACT home
+# page (site/index.md).
 #
 # The table is rendered by Jekyll from this file, and the same data is also
-# published as a machine-readable JSON file (sdt_team.json) for readers,
+# published as a machine-readable JSON file (science_team.json) for readers,
 # search engines and downstream tools.
 #
 # Each entry:
