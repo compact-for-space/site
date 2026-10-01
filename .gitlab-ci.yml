@@ -162,43 +162,39 @@ build_pages:
     - (cd "site" && jekyll build -d ../public)
     - $APT_GET_INSTALL chromium img2pdf poppler-utils
     - chromium --version
-    - (cd "site" && bundle exec jekyll serve --host 0.0.0.0 --quiet --detach)
-    - until curl -f -s http://localhost:4000/ > /dev/null; do sleep 1; done
+    - (cd "site" && openssl req -x509 -newkey rsa:2048 -keyout key.pem -out cert.pem -days 1 -nodes -subj "/CN=compact-mission.space" -addext "subjectAltName=DNS:compact-mission.space")
+    - echo "127.0.0.1 compact-mission.space" >> /etc/hosts
+    - (cd "site" && bundle exec jekyll serve --host 0.0.0.0 --port 443 --quiet --detach --ssl-key key.pem --ssl-cert cert.pem)
+    - until curl --cacert site/cert.pem -f -s https://compact-mission.space/ > /dev/null; do sleep 1; done
     - sleep 1
     - mkdir -p pdfs
     - |
       FILES=(
-      "00_index:index"
-      "01_science:science-mission"
-      "02_design:realization-design"
-      "03_activities:breadboard"
-      "04_docu:documentation-specification"
-      "05_posts:posts"
-      "06_publications:publications"
-      "07_funding:funding"
-      "08_about:about")
-    # - echo "127.0.0.1 site-2ef4a3.gitlab.io" >> /etc/hosts
-    - echo "127.0.0.1 compact-mission.space" >> /etc/hosts
+        "00_index:index"
+        "01_science:science-mission"
+        "02_design:realization-design"
+        "03_activities:breadboard"
+        "04_docu:documentation-specification"
+        "05_posts:posts"
+        "06_publications:publications"
+        "07_funding:funding"
+        "08_about:about")
     - set -x
     - |
       for item in "${FILES[@]}"; do
-      idx=${item%%:*}
-      path=${item##*:}
-      echo "idx: $idx"
-      echo "path: $path"
-      if [ "$path" = "index" ]; then
-        # url="http://localhost:4000/"
-        # url="http://site-2ef4a3.gitlab.io:4000/"
-        url="http://compact-mission.space:4000/"
-      else
-        # url="http://localhost:4000/${path}"
-        # url="http://site-2ef4a3.gitlab.io:4000/${path}"
-        url="http://compact-mission.space:4000/${path}"
-      fi
-      chromium --no-sandbox --disable-dev-shm-usage --headless --disable-gpu --page=A4 --print-to-pdf="$(pwd)"/pdfs/"${idx}".pdf "$url"
-      if [ "$path" = "index" ]; then
-      chromium --no-sandbox --disable-dev-shm-usage --headless --disable-gpu --screenshot="$(pwd)"/pdfs/"${idx}".png --window-size=1024,768 "$url"
-      fi
+        idx=${item%%:*}
+        path=${item##*:}
+        echo "idx: $idx"
+        echo "path: $path"
+        if [ "$path" = "index" ]; then
+          url="https://compact-mission.space/"
+        else
+          url="https://compact-mission.space/${path}"
+        fi
+        chromium --no-sandbox --disable-dev-shm-usage --headless --disable-gpu --ignore-certificate-errors --print-to-pdf="$(pwd)"/pdfs/"${idx}".pdf "$url"
+        if [ "$path" = "index" ]; then
+          chromium --no-sandbox --disable-dev-shm-usage --headless --disable-gpu --ignore-certificate-errors --screenshot="$(pwd)"/pdfs/"${idx}".png --window-size=1024,768 "$url"
+        fi
       done
     - img2pdf --output pdfs/00_cover.pdf -S A4 pdfs/00_index.png
     - pdfunite pdfs/*.pdf "$BASE_NAME"."$TAG".pdf
