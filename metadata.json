@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "compact-for-space",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "This repository contains the source code and build instructions for building the COMPACT for space website.",
     "resource_type": {
       "id": "software"
@@ -93,6 +93,36 @@
       }
     ],
     "related_identifiers": [
+      {
+        "identifier": "https://gitlab.com/projects/81882967",
+        "relation_type": {
+          "id": "isderivedfrom"
+        },
+        "resource_type": {
+          "id": "software"
+        },
+        "scheme": "url"
+      },
+      {
+        "identifier": "https://compact-mission.space/",
+        "relation_type": {
+          "id": "issourceof"
+        },
+        "resource_type": {
+          "id": "publication"
+        },
+        "scheme": "url"
+      },
+      {
+        "identifier": "10.5281/zenodo.21478659",
+        "relation_type": {
+          "id": "ispartof"
+        },
+        "resource_type": {
+          "id": "software"
+        },
+        "scheme": "doi"
+      },
       {
         "relation_type": {
           "id": "references"
