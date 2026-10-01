@@ -285,7 +285,7 @@ release_job:
   script:
     - cat /etc/os-release
     - echo "running release_job for $TAG"
-    - wget "https://zenodo.org/badge/DOI/$DOI.svg"
+    - wget -O doi.svg "https://zenodo.org/badge/DOI/$DOI.svg"
   release:
     name: '$TAG'
     description: '$DESCRIPTION'
@@ -303,7 +303,7 @@ release_job:
           link_type: other
   artifacts:
     paths:
-      - "$DOI.svg"
+      - doi.svg
 
 post_release_job:
   stage: deploy
