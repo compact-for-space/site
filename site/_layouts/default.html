@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+    <script>
+      document.querySelectorAll('a[href]').forEach(a => {
+	  try {
+	      const url = new URL(a.href, location.origin);
+	      if (url.hostname !== location.hostname ||
+		  url.pathname.includes('.pdf') ||
+		  url.pathname.includes('.json')) {
+		  a.target = '_blank';
+		  a.rel = 'noopener';
+	      }
+	  } catch (_) {}
+      });
+    </script>
+
+  </body>
+
+</html>
