@@ -16,7 +16,7 @@ SPDX-License-Identifier: CC-BY-SA-4.0
 This repository contains the source code and build instructions for
 building the [COMPACT website](https://compact-mission.space/).
 
-## Contribution
+## Contributing
 
 To contribute to this project,
 please follow the standard software development workflow:
@@ -28,7 +28,7 @@ please follow the standard software development workflow:
 3. Create your content
 4. Add yourself as contributor in `metadata.json` (in the root directory)
 5. Adapt version `.metadata.version` in `metadata.json`
-6. Submit a Merge Request
+6. Submit a Merge Request to the `contributions` branch
 
 ### Detailed Steps
 
@@ -56,7 +56,7 @@ if you wish to reduce the total number of branches.
 
 #### 3. implement changes
 
-Create your content or fix the bugs.
+Create your content or fix bugs.
 
 #### 4. add yourself as contributor
 
@@ -64,13 +64,13 @@ Important: If you are adding a new page or significant content,
 remember to add your name and details to [`metadata.json`](metadata.json)
 to be credited as a contributor.
 
-#### 5. Adapt version
+#### 5. adapt version
 
 Adapt version `.metadata.version` in [`metadata.json`](metadata.json) following
 semantic versioning (cf. [semver.org](https://semver.org/))
 
-Important: Ensure that the version tag (`.metadata.version`) in `metadata.json`
-does not already exist in the repository.
+Important: Ensure the new version tag (`.metadata.version`) in `metadata.json`
+has not been used by a previous release (i. e., no existing tag uses it).
 
 #### 6. create a merge request
 
@@ -83,7 +83,7 @@ All contributions are first reviewed in the `contributions` branch.
 Once approved, the maintainers will merge your changes into `main`.
 
 This workflow ensures that all automated pipelines (including those with
-special permission requirements) run successfully in a controlled environment
+special permission requirements) run and pass in a controlled environment
 before the changes are integrated.
 
 Please provide a clear description of the changes you have made.
