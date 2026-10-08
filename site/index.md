@@ -21,7 +21,7 @@ COMPACT (**Com**plex **P**l**a**sma Fa**c**ili**t**y) is a multi-user facility f
 * Planetary physics
 * Particles as diagnostics in plasmas
 
-Science team core members (incl. official Science Definition Team) (<a href="{{ 'science_team.json' | relative_url }}" download>list as json</a>):
+Science team core members (incl. official Science Definition Team) ([list as json]({{ 'science_team.json' | relative_url }})):
 
 | Name | Affiliation | Role | ORCID | ROR |
 |---|---|---|---|
