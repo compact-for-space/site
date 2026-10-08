@@ -14,4 +14,4 @@ MT?documentTableId=8284555823688397007&userAction=Browse&templateName=&documentI
 To access the information on the call, or upload a proposal, it might happen that you have to register as external user on the ESA website.
 
 Meanwhile you can have a look on the contents of the call here:
-![ESA/DLR call for ideas]({{ '../assets/documents/Annex_1-OSIP_Campaign_overview_v20260928.pdf' | relative_url }})
+[ESA/DLR call for ideas]({{ '/assets/documents/Annex_1-OSIP_Campaign_overview_v20260928.pdf' | relative_url }})
