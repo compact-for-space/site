@@ -23,19 +23,49 @@
             "name": "University of Greifswald"
           }
         ]
-      }
-    ],
-    "contributors": [
+      },
       {
         "person_or_org": {
           "type": "personal",
-          "given_name": "Daniel",
-          "family_name": "Mohr"
+          "given_name": "Andre",
+          "family_name": "Melzer",
+          "identifiers": {
+            "scheme": "orcid",
+            "identifier": "0000-0001-9301-9357"
+          }
         },
+        "affiliations": [
+          {
+            "id": "00r1edq15",
+            "name": "University of Greifswald"
+          }
+        ],
         "role": {
           "id": "contactperson"
         }
       },
+      {
+        "person_or_org": {
+          "type": "personal",
+          "given_name": "Christina",
+          "family_name": "Knapek",
+          "identifiers": {
+            "scheme": "orcid",
+            "identifier": "0000-0001-7105-627X"
+          }
+        },
+        "affiliations": [
+          {
+            "id": "00r1edq15",
+            "name": "University of Greifswald"
+          }
+        ],
+        "role": {
+          "id": "contactperson"
+        }
+      }
+    ],
+    "contributors": [
       {
         "person_or_org": {
           "type": "personal",
