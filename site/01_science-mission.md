@@ -24,12 +24,12 @@ Interesting problems to be tackled in COMPACT are:
 ## Statistical physics
 
 * Equation of State (EOS): Determine the relation between thermodynamic quantities, such as
-temperature T, volume V or pressure p, describing the state of complex plasma matter; thermodynamics
+temperature `T`, volume `V` or pressure `p`, describing the state of complex plasma matter; thermodynamics
 of systems in which Newton’s third law is “broken”
 
 * Deviations from an ideal gas, e.g. influence of non-negligible occupied volume of the dust particles
 
-* Transport properties as a response to perturbations, e.g. heat conductivity, viscosity and diffusion
+* Transport properties as a response to perturbations, e.g. thermal conductivity, viscosity and diffusion
 
 * Non-equilibrium thermodynamics: coupling of the thermodynamic properties of the dust particles to the
 non-equilibrium environment of the plasma particles (electrons and ions)
@@ -74,7 +74,7 @@ with active particles; giant number fluctuations; emergence of cooperative/colle
 
 * Aerosol coagulation: validation of coagulation rate constant models
 
-* Contact charging events upon collision: particle drifts in non-plasma situations
+* Contact charging events upon collision: particle drifts in plasma-free environments
 
 ## Particles as diagnostics in plasmas
 
