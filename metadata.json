@@ -1,7 +1,7 @@
 {
   "metadata": {
     "title": "compact-for-space",
-    "version": "0.1.4",
+    "version": "0.2.0",
     "description": "This repository contains the source code and build instructions for building the COMPACT for space website.",
     "resource_type": {
       "id": "software"
@@ -10,11 +10,45 @@
       {
         "person_or_org": {
           "type": "personal",
-          "given_name": "Daniel",
+          "given_name": "Daniel P.",
           "family_name": "Mohr",
           "identifiers": {
             "scheme": "orcid",
             "identifier": "0000-0002-9382-6586"
+          }
+        },
+        "affiliations": [
+          {
+            "id": "00r1edq15",
+            "name": "University of Greifswald"
+          }
+        ]
+      },
+      {
+        "person_or_org": {
+          "type": "personal",
+          "given_name": "Andre",
+          "family_name": "Melzer",
+          "identifiers": {
+            "scheme": "orcid",
+            "identifier": "0000-0001-9301-9357"
+          }
+        },
+        "affiliations": [
+          {
+            "id": "00r1edq15",
+            "name": "University of Greifswald"
+          }
+        ]
+      },
+      {
+        "person_or_org": {
+          "type": "personal",
+          "given_name": "Christina A.",
+          "family_name": "Knapek",
+          "identifiers": {
+            "scheme": "orcid",
+            "identifier": "0000-0001-7105-627X"
           }
         },
         "affiliations": [
@@ -29,12 +63,19 @@
       {
         "person_or_org": {
           "type": "personal",
-          "given_name": "Daniel",
-          "family_name": "Mohr"
+          "given_name": "Daniel P.",
+          "family_name": "Mohr",
+          "identifiers": {
+            "scheme": "orcid",
+            "identifier": "0000-0002-9382-6586"
+          }
         },
-        "role": {
-          "id": "contactperson"
-        }
+        "affiliations": [
+          {
+            "id": "00r1edq15",
+            "name": "University of Greifswald"
+          }
+        ]
       },
       {
         "person_or_org": {
@@ -59,7 +100,7 @@
       {
         "person_or_org": {
           "type": "personal",
-          "given_name": "Christina",
+          "given_name": "Christina A.",
           "family_name": "Knapek",
           "identifiers": {
             "scheme": "orcid",
