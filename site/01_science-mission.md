@@ -52,7 +52,7 @@ manner that prevents crystallization
 
 * Turbulence: study of active turbulence through internal instabilities; determination of energy cascades
 
-* Nonlinear waves: drive large-amplitude waves; influence of agglomeration, size distributions and strong-coupling effects;
+* Nonlinear waves: driven large-amplitude waves; influence of agglomeration, size distributions and strong-coupling effects;
 shock waves; rogue waves
 
 ## Active and non-spherical particles
